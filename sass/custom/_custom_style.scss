@@ -1,0 +1,57 @@
+* {
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+body{
+	font-family: $font__main;
+}
+
+.site-header{
+	background: $bgColor;
+	padding: 10px;
+}
+
+.container{
+	width: 1800px;
+	margin: 0 auto;
+	&>div{
+		float: left;
+	}
+}
+
+.site-branding{
+	width: 25%;
+}
+
+.site-brand-inner{
+	&>div,
+	&>h1,
+	&>p{
+		display: inline-block;
+	}
+}
+
+.site-logo-div{
+	max-width: 80px;
+	vertical-align: middle;
+}
+.header-right-wrapper{
+	width: 75%;
+	float:right;
+	clear:none;
+}
+
+.site-content{
+	.content-area,
+	.widget-area{
+		float:left;
+	}
+}
+
+.content-area{
+	width: 75%
+}
+.widget-area{
+	width: 25%;
+}
