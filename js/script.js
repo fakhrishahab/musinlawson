@@ -66,7 +66,8 @@ var image_field;
 // }
 // media_upload( 'input.select-img');
 // // });
-elmTrigger = '';
+jQuery(document).ready(function(){
+  elmTrigger = '';
 jQuery(function($) {
   mediaControl = {
     // Initializes a new media manager or returns an existing frame.
@@ -115,6 +116,10 @@ jQuery(function($) {
   
   mediaControl.init();
 });
+})
+
+
+
 
 // jQuery(document).ready(function(){
 //   console.log(jQuery('.select-img'))

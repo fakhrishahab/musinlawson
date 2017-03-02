@@ -18,21 +18,43 @@ register_sidebar(
 );
 
 
-require(get_template_directory() . '/colelawson-service-widget.php');
+require(get_template_directory() . '/widgets/colelawson-service-widget.php');
 
 
 // queue up the necessary js
 function hrw_enqueue($hook){
-
+	$theme = wp_get_theme();
+    $version = $theme->get( 'Version' );
 	wp_enqueue_style('thickbox');
 	wp_enqueue_script('media-upload');
 	wp_enqueue_script('thickbox');
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'onepress-js-plugins', get_template_directory_uri() . '/js/plugins.js', array(), $version, true );
+	// wp_enqueue_script( 'onepress-js-theme', get_template_directory_uri() . '/js/theme.js', array(), $version, true );
+    wp_enqueue_script( 'jquery-ui-sortable' );
+    wp_enqueue_script( 'wp-color-picker' );
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_style( 'onepress-customizer',  get_template_directory_uri() . '/css/customizer.css' );
 	wp_enqueue_media();
 	wp_enqueue_script('wptuts-upload');
 	// moved the js to an external file, you may want to change the path
-	wp_enqueue_script('hrw', '/wp-content/themes/colelawson/js/script.js', null, null, false);
+	wp_enqueue_script('hrw', get_template_directory_uri() . '/js/script.js', null, $version, true);
+	wp_enqueue_script('hrws', get_template_directory_uri() . '/js/customizer.js', null, $version, true);
+}
+
+function cus_enqueue($hook){
+
+	// wp_enqueue_style('thickbox');
+	// wp_enqueue_script('media-upload');
+	// wp_enqueue_script('thickbox');
+	// wp_enqueue_media();
+	// wp_enqueue_script('wptuts-upload');
+	// moved the js to an external file, you may want to change the path
+	wp_enqueue_script('hrw', '/wp-content/themes/colelawson/js/customizer.js', null, 1.0, true);
 }
 add_action('admin_enqueue_scripts', 'hrw_enqueue');
+
+// add_action( 'admin_enqueue_scripts', 'cus_enqueue' );
 
 
 ?>

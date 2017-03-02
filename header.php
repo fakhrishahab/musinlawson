@@ -32,4 +32,4 @@
     do_action( 'colelawson_site_start' );
     ?>
 
-	<div id="content" class="site-content">
+	<!-- <div id="content" class="site-content"> -->

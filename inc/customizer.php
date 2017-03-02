@@ -63,8 +63,137 @@ function colelawson_customize_register( $wp_customize ) {
         )
     );
 
+    /*------------------------------------------------------------------------*/
+    /*  Site Options
+    /*------------------------------------------------------------------------*/
+	/*------------------------------------------------------------------------*/
+    /*  Site Options
+    /*------------------------------------------------------------------------*/
+		$wp_customize->add_panel( 'colelawson_options',
+			array(
+				'priority'       => 22,
+			    'capability'     => 'edit_theme_options',
+			    'theme_supports' => '',
+			    'title'          => esc_html__( 'Frontpage Content', 'onepress' ),
+			    'description'    => '',
+			)
+		);
+
+		/* Services Settings
+		----------------------------------------------------------------------*/
+		$wp_customize->add_section( 'colelawson_services_settings' ,
+			array(
+				'priority'    => 3,
+				'title'       => esc_html__( 'Services', 'onepress' ),
+				'description' => '',
+				'panel'       => 'colelawson_options',
+			)
+		);
+
+			// Service Title
+			$wp_customize->add_setting( 'colelawson_service_title',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Service Title', 'colelawson' ),
+					'transport'			=> 'postMessage',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_service_title',
+				array(
+					'label'       => esc_html__('Service Title', 'colelawson'),
+					'section'     => 'colelawson_services_settings',
+					'description' => ''
+				)
+			);
+
+			// Service Description
+			$wp_customize->add_setting( 'colelawson_service_description',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Service Description', 'colelawson' ),
+					'transport'			=> 'postMessage'
+				)
+			);
+			$wp_customize->add_control( 'colelawson_service_description',
+				array(
+					'label'       => esc_html__('Service Description', 'colelawson'),
+					'section'     => 'colelawson_services_settings',
+					'description' => '',
+					'type'		  => 'textarea'
+				)
+			);
+
+			// $wp_customize->add_setting('colelawson_service_image_upload',
+			// 	array(
+			// 		'sanitize_callback' => 'sanitize_text_field',
+			// 		'transport'			=> 'postMessage'
+			// 	)
+			// );
+
+			// $wp_customize->add_control(
+			// 	new WP_Customize_Upload_Control(
+			// 		$wp_customize,
+			// 		'colelawson_service_image_upload',
+			// 		array(
+			// 			'label'      => esc_html__( 'Service Image', 'colelawson' ),
+			// 			'section'    => 'colelawson_services_settings'
+			// 		)
+			// 	)
+			// );
+
+			// Service Image
+			$wp_customize->add_setting('colelawson_service_image',
+				array(
+					'sanitize_callback' => 'colelawson_sanitize_repeatable_data_field',
+					'transport' 		=> 'postMessage'
+				)
+			);
+
+			$wp_customize->add_control(
+				new Colelawson_Customize_Repeatable_Control(
+					$wp_customize,
+					'colelawson_service_image',
+					array(
+						'label'			=> esc_html__('Service Images', 'colelawson'),
+						'description'	=> '',
+						'section'		=> 'colelawson_services_settings',
+                        'live_title_id' => 'network', // apply for unput text and textarea only
+                        'title_format'  => esc_html__('[live_title]', 'colelawson'), // [
+						'max_item'		=> 8,
+						'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/onepress-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=onepress_customizer#get-started">OnePress Plus</a> to be able to add more items and unlock other premium features!', 'onepress' ),
+						'fields'    => array(
+                            'network'  => array(
+                                'title' => esc_html__('Service Title', 'colelawson'),
+                                'type'  =>'text',
+                            ),
+                            'user_id' => array(
+								'title' => esc_html__('Image', 'colelawson'),
+								'type'  =>'media',
+								'desc'  => '',
+							),
+                            'link'  => array(
+                                'title' => esc_html__('URL', 'colelawson'),
+                                'type'  =>'text',
+                            ),
+                        ),
+					)
+				)
+			);
+
+
+
+
+	/**
+	 * Hook to add other customize
+	 */
+	do_action( 'colelawson_customize_after_register', $wp_customize );
 }
+
 add_action( 'customize_register', 'colelawson_customize_register' );
+
+function colelawson_sanitize_text( $string ) {
+	return wp_kses_post( balanceTags( $string ) );
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -72,4 +201,4 @@ add_action( 'customize_register', 'colelawson_customize_register' );
 function colelawson_customize_preview_js() {
 	wp_enqueue_script( 'colelawson_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'colelawson_customize_preview_js' );
+// add_action( 'customize_preview_init', 'colelawson_customize_preview_js' );
