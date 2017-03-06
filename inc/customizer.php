@@ -63,9 +63,6 @@ function colelawson_customize_register( $wp_customize ) {
         )
     );
 
-    /*------------------------------------------------------------------------*/
-    /*  Site Options
-    /*------------------------------------------------------------------------*/
 	/*------------------------------------------------------------------------*/
     /*  Site Options
     /*------------------------------------------------------------------------*/
@@ -78,6 +75,103 @@ function colelawson_customize_register( $wp_customize ) {
 			    'description'    => '',
 			)
 		);
+
+		/* About Us 
+		----------------------------------------------------------------------*/
+
+		$wp_customize->add_section('colelawson_about_section',
+			array(
+				'priority' => 1,
+				'title' => esc_html__('About', 'colelawson'),
+				'description' => '',
+				'panel' => 'colelawson_options'
+			)
+		);
+
+			$show_about = get_theme_mod('colelawson_hide_about_section');
+
+			$wp_customize->add_setting('colelawson_hide_about_section', 
+				array(
+					'sanitize_callback' => 'colelawson_sanitize_checkbox',
+					'default' => $show_about ? 1 : 0,
+				)
+			);
+
+			$wp_customize->add_control(
+		        'colelawson_hide_about_section',
+		        array(
+		            'label' 		=> esc_html__('Hide About Section', 'colelawson'),
+		            'section' 		=> 'colelawson_about_section',
+		            'type'          => 'checkbox',
+		        )
+		    );
+
+			// About Title
+			$wp_customize->add_setting( 'colelawson_about_title',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Title', 'colelawson' ),
+					'transport'			=> 'postMessage',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_about_title',
+				array(
+					'label'       => esc_html__('Title', 'colelawson'),
+					'section'     => 'colelawson_about_section',
+					'description' => ''
+				)
+			);
+
+			// About Description
+			$wp_customize->add_setting( 'colelawson_about_description',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Description', 'colelawson' ),
+					'transport'			=> 'postMessage',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_about_description',
+				array(
+					'label'       => esc_html__('Description', 'colelawson'),
+					'section'     => 'colelawson_about_section',
+					'description' => '',
+					'type'		  => 'textarea'
+				)
+			);
+
+			// About Content
+			$wp_customize->add_setting( 'colelawson_about_content',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Content', 'colelawson' ),
+					'transport'			=> 'postMessage',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_about_content',
+				array(
+					'label'       => esc_html__('Content', 'colelawson'),
+					'section'     => 'colelawson_about_section',
+					'description' => '',
+					'type'		  => 'textarea'
+				)
+			);
+
+			// About Link
+			$wp_customize->add_setting( 'colelawson_about_link',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					// 'default'           => esc_html__( 'Link', 'colelawson' ),
+					'transport'			=> 'postMessage',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_about_link',
+				array(
+					'label'       => esc_html__('Link', 'colelawson'),
+					'section'     => 'colelawson_about_section',
+					'description' => '',
+					'type' => 'dropdown-pages'
+				)
+			);
 
 		/* Services Settings
 		----------------------------------------------------------------------*/

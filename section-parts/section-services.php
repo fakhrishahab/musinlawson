@@ -7,7 +7,7 @@ $array = get_theme_mod('colelawson_service_image');
 
 if($hide_service_section){
 	?>
-	<section class='section-services'>
+	<section class='section-services' id="services-section">
 	<div>
 		<h1> <?php echo $title; ?> </h1>
 		<h3> <?php echo $description; ?> </h3>
