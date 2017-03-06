@@ -10,7 +10,7 @@ if($hide_service_section){
 	<section class='section-services' id="services-section">
 	<div>
 		<h1> <?php echo $title; ?> </h1>
-		<h3> <?php echo $description; ?> </h3>
+		<h3> <?php echo esc_textarea($description); ?> </h3>
 	</div>
 
 	<?php 

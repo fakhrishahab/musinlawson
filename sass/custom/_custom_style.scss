@@ -1,6 +1,26 @@
 * {
 	box-sizing: border-box;
 	word-wrap: break-word;
+	color: $fontColor_default;
+}
+
+*:before,
+*:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+
+a{
+	text-decoration: none;
+	color: $fontColor_default;
+	
+	&:hover,
+	&:active,
+	&:focus{
+		color: $fontColor__blue;
+	}
 }
 
 body{
@@ -8,20 +28,28 @@ body{
 }
 
 .site-header{
-	background: $bgColor;
+	background: transparent;
 	padding: 10px;
-}
+	position: absolute;
+	z-index: 2;
+	width: 100%;
 
-.container{
-	width: 1800px;
-	margin: 0 auto;
-	&>div{
-		float: left;
+	.sticky-header{
+		position:absolute;
 	}
 }
 
+.container{
+	max-width: 1500px;
+	margin: 0 auto;
+	// &>div{
+	// 	float: left;
+	// }
+}
+
 .site-branding{
-	width: 25%;
+	max-width: 25%;
+	float: left;
 }
 
 .site-brand-inner{
@@ -30,16 +58,60 @@ body{
 	&>p{
 		display: inline-block;
 	}
+
+	&.no-desc{
+		.site-title a{
+			line-height: 55px;
+		}
+	}
+
+	&.has-desc{
+		.site-title{
+			line-height: 20px;
+		}
+		.site-title a{
+			line-height: 20px;
+			margin-top: 10px; 
+		}
+
+		.site-description{
+			margin-top: -20px;
+		}
+	}
 }
 
 .site-logo-div{
-	max-width: 80px;
+	display: block;
 	vertical-align: middle;
+	
+	a{
+		float: left;
+	}
+	img{
+		max-width: 100px;
+		display: inline-block;
+		float: left;
+		vertical-align: middle;
+	}
+
+	.logo-headline{
+		display: inline-block;
+		float: left;
+	}
+
+	// .site-title{
+	// 	// line-height: 10px;
+	// }
 }
-.header-right-wrapper{
-	width: 75%;
-	float:right;
+.header-center-wrapper{
+	width: 60%;
+	float:left;
 	clear:none;
+}
+
+.header-right-wrapper{
+	width: 15%;
+	float: right;
 }
 
 .site-content{
@@ -54,4 +126,72 @@ body{
 }
 .widget-area{
 	width: 25%;
+}
+
+ul.colelawson-menu{
+	margin-top: 22px;
+}
+.main-navigation{
+	padding-left: 20px;
+
+	li a {
+		padding: 15px;
+		text-transform: uppercase;
+		color: $white;
+		font-size: 16px;
+	}
+
+	ul ul a{
+		width: 250px;
+	}
+}
+
+.colelawson-menu .menu-item-has-children{
+	position: relative;
+
+	& > i.fa{
+		position: absolute;
+		right: 0;
+		top: 20px;
+		padding-left: 10px;
+		color: $white;
+	}
+
+	& > .sub-menu{
+		background: $white;
+		top: 50px;
+
+		& li {
+
+			& a{
+				color: $fontColor_default;
+			}
+
+		}
+	}
+}
+
+.sub-menu .menu-item-has-children{
+	position: relative;
+
+	& > i.fa{
+		position: absolute;
+		right: 10px;
+		top: 20px;
+		padding-left: 10px;
+		color: $fontColor_default;
+	}
+
+	& > .sub-menu{
+		background: $white;
+		top: 0;
+
+		& li {
+
+			& a{
+				color: $fontColor_default;
+			}
+
+		}
+	}
 }

@@ -1,5 +1,8 @@
 <?php
 
+$theme = wp_get_theme();
+$version = $theme->get( 'Version' );
+
 function enqueue_styles_scripts() { 
 	wp_enqueue_style('gfonts', 'https://fonts.googleapis.com/css?family=Poly:400,400i|Source+Sans+Pro:400,400i,600,600i,700,700i');
 	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
@@ -20,11 +23,16 @@ register_sidebar(
 
 require(get_template_directory() . '/widgets/colelawson-service-widget.php');
 
+function homepage_scripts(){
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script('nav', get_template_directory_uri() .'/js/custom_navigation.js', array('jquery'), $version, true);
+}
+
+add_action('wp_enqueue_scripts', 'homepage_scripts');
+
 
 // queue up the necessary js
 function hrw_enqueue($hook){
-	$theme = wp_get_theme();
-    $version = $theme->get( 'Version' );
 	wp_enqueue_style('thickbox');
 	wp_enqueue_script('media-upload');
 	wp_enqueue_script('thickbox');

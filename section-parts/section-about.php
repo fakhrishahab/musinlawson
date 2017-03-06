@@ -13,7 +13,7 @@
 	<h1><?php echo $about_title; ?></h1>
 	<div class="about-section-content">
 		<div class="about-content">
-			<?php echo esc_html($about_content); ?>
+			<?php echo esc_textarea($about_content); ?>
 
 			<a href="<?php echo $about_link; ?>">Read Our Story</a>
 		</div>

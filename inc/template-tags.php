@@ -19,7 +19,7 @@ if ( ! function_exists( 'colelawson_site_logo' ) ) {
                 $classes['logo'] = 'has-logo-img';
                 $html .= '<div class="site-logo-div">';
                 $html .= get_custom_logo();
-                $html .= '</div>';
+                $html .= '<div class="logo-headline">';
             }
         }
 
@@ -27,11 +27,13 @@ if ( ! function_exists( 'colelawson_site_logo' ) ) {
         $hide_tagline  = get_theme_mod( 'colelawson_hide_tagline', 0 );
 
         if ( ! $hide_sitetile ) {
-            $classes['title'] = 'has-title';
             if ( is_front_page() && !is_home() ) {
+            	$classes['title'] = 'has-title';	
                 $html .= '<h1 class="site-title"><a class="site-text-logo" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></h1>';
             } else {
-                $html .= '<p class="site-title"><a class="site-text-logo" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>';
+
+            	$classes['title'] = 'no-title';
+                //$html .= '<p class="site-title"><a class="site-text-logo" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>';
             }
         }
 
@@ -45,7 +47,7 @@ if ( ! function_exists( 'colelawson_site_logo' ) ) {
             $classes['desc'] = 'no-desc';
         }
 
-        echo '<div class="site-brand-inner '.esc_attr( join( ' ', $classes ) ).'">'.$html.'</div>';
+        echo '<div class="site-brand-inner '.esc_attr( join( ' ', $classes ) ).'">'.$html.'</div></div></div>';
     }
 }
 
@@ -65,22 +67,17 @@ if ( ! function_exists( 'colelawson_site_header' ) ) {
                 </div>
                 <!-- .site-branding -->
 
-                <div class="header-right-wrapper">
-                    <a href="#0" id="nav-toggle"><?php _e('Primary Menu', 'colelawson'); ?><span></span></a>
+                <div class="header-center-wrapper">
+                    <!-- <a href="#0" id="nav-toggle"><?php //_e('Primary Menu', 'colelawson'); ?><span></span></a> -->
                     <nav id="site-navigation" class="main-navigation" role="navigation">
                         <ul class="colelawson-menu">
                             <?php wp_nav_menu(array('theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>
                         </ul>
                     </nav>
-                    <div>
-                    	<?php get_search_form(); ?>
-                    </div>
+                </div>
 
-                    <!-- <nav id="site-navigation" class="main-navigation" role="navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'colelawson' ); ?></button>
-						<?php //wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-					</nav> -->
-                    <!-- #site-navigation -->
+                <div class="header-right-wrapper">
+                	<?php get_search_form(); ?>
                 </div>
             </div>
         </header><!-- #masthead -->
