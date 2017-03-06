@@ -211,6 +211,36 @@ if ( ! function_exists( 'colelawson_get_service_section' ) ) {
     }
 }
 
+if(! function_exists('colelawson_get_service_image')){
+
+	function colelawson_get_service_image(){
+		$title = get_theme_mod('colelawson_service_title');
+		$description = get_theme_mod('colelawson_service_description');
+		$array = get_theme_mod('colelawson_service_image');
+		
+		$html = '<div>'. $title .'</div><div>' . $description . '</div>';
+
+		if(!empty($array) && is_array($array)){
+			foreach ($array as $key => $value) {
+				$array[$key] = wp_parse_args($value, array(
+					'title' => '',
+					'image' => '',
+					'link' => ''
+				));
+
+				$html .= '<a href=' . esc_url($array[$key]['link']) . '><div>
+					<img src=' . esc_url($array[$key]['image']['url']) . '> 
+					<div>' . $array[$key]['title'] . '</div>
+					</div></a>';
+
+				//echo $array[$key]['title'];
+			}
+		}
+
+		return $html;
+	}
+}
+
 /**
  * Returns true if a blog has more than 1 category.
  *

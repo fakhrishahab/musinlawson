@@ -162,11 +162,11 @@ function colelawson_customize_register( $wp_customize ) {
 						'max_item'		=> 8,
 						'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/onepress-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=onepress_customizer#get-started">OnePress Plus</a> to be able to add more items and unlock other premium features!', 'onepress' ),
 						'fields'    => array(
-                            'network'  => array(
+                            'title'  => array(
                                 'title' => esc_html__('Service Title', 'colelawson'),
                                 'type'  =>'text',
                             ),
-                            'user_id' => array(
+                            'image' => array(
 								'title' => esc_html__('Image', 'colelawson'),
 								'type'  =>'media',
 								'desc'  => '',
