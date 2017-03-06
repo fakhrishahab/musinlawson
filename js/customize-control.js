@@ -48,3 +48,15 @@
 	  mediaControl.init();
 	});
 })(jQuery);
+
+( function( $ , api ) {
+/**
+     * Handle rendering of partials.
+     *
+     * @param {api.selectiveRefresh.Placement} placement
+     */
+    api.selectiveRefresh.bind( 'partial-content-rendered', function( placement ) {
+        $( window ).resize();
+    } );
+    
+} )( jQuery , wp.customize );

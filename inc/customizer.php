@@ -84,11 +84,29 @@ function colelawson_customize_register( $wp_customize ) {
 		$wp_customize->add_section( 'colelawson_services_settings' ,
 			array(
 				'priority'    => 3,
-				'title'       => esc_html__( 'Services', 'onepress' ),
+				'title'       => esc_html__( 'Services', 'colelawson' ),
 				'description' => '',
 				'panel'       => 'colelawson_options',
 			)
 		);
+
+			$show_services = get_theme_mod('colelawson_hide_services_section');
+
+			$wp_customize->add_setting( 'colelawson_hide_services_section',
+		        array(
+		            'sanitize_callback' => 'colelawson_sanitize_checkbox',
+		            'default'           => $show_services ? 1: 0,
+		        )
+		    );
+
+		    $wp_customize->add_control(
+		        'colelawson_hide_services_section',
+		        array(
+		            'label' 		=> esc_html__('Hide Service Section', 'colelawson'),
+		            'section' 		=> 'colelawson_services_settings',
+		            'type'          => 'checkbox',
+		        )
+		    );
 
 			// Service Title
 			$wp_customize->add_setting( 'colelawson_service_title',
@@ -157,7 +175,7 @@ function colelawson_customize_register( $wp_customize ) {
 						'label'			=> esc_html__('Service Images', 'colelawson'),
 						'description'	=> '',
 						'section'		=> 'colelawson_services_settings',
-                        'live_title_id' => 'network', // apply for unput text and textarea only
+                        'live_title_id' => 'title', // apply for unput text and textarea only
                         'title_format'  => esc_html__('[live_title]', 'colelawson'), // [
 						'max_item'		=> 8,
 						'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/onepress-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=onepress_customizer#get-started">OnePress Plus</a> to be able to add more items and unlock other premium features!', 'onepress' ),
