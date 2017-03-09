@@ -10,16 +10,21 @@
 
 
 <section class="about-section" id="about-section">
-	<h1><?php echo $about_title; ?></h1>
-	<div class="about-section-content">
-		<div class="about-content">
-			<?php echo esc_textarea($about_content); ?>
+	<div class="container">
+		<div class="about-section-content-wrapper">
+			<div class="about-section-content row">
+				<div class="about-content grid-7">
 
-			<a href="<?php echo $about_link; ?>">Read Our Story</a>
-		</div>
+					<h1><?php echo $about_title; ?></h1>
+					<?php echo htmlspecialchars_decode(esc_html($about_content)); ?>
 
-		<div class="about-description">
-			<?php echo $about_description; ?>
+					<a href="<?php echo $about_link; ?>" class="read-more-link">Read Our Story</a>
+				</div>
+
+				<div class="about-description grid-5">
+					<?php echo htmlspecialchars_decode(esc_html($about_description)); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

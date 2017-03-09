@@ -1,197 +1,189 @@
-* {
-	box-sizing: border-box;
-	word-wrap: break-word;
-	color: $fontColor_default;
+@import 'module/variable';
+@import 'module/mixins';
+@import 'module/normalize';
+@import 'module/grid-12';
+@import 'module/component';
+
+.p10{
+	padding:10px;
+}
+.p20{
+	padding:20px;
 }
 
-*:before,
-*:after{
-	content: '';
-	clear: both;
-	display: block;
+.ps10{
+	padding: 0 10px;
 }
 
 
-a{
-	text-decoration: none;
-	color: $fontColor_default;
+// .site-header{
+// 	background: transparent;
+// 	padding: 10px;
+// 	position: absolute;
+// 	z-index: 2;
+// 	width: 100%;
+
+// 	.sticky-header{
+// 		position:absolute;
+// 	}
+// }
+
+// .container{
+// 	max-width: 1500px;
+// 	margin: 0 auto;
+// }
+
+// .site-branding{
+// 	max-width: 25%;
+// 	float: left;
+// }
+
+// .header-center-wrapper{
+// 	width: 60%;
+// 	float:left;
+// 	clear:none;
+// }
+
+// .header-right-wrapper{
+// 	width: 15%;
+// 	float: right;
+// }
+
+// .site-brand-inner{
+// 	&>div,
+// 	&>h1,
+// 	&>p{
+// 		display: inline-block;
+// 	}
+
+// 	&.has-logo-image{
+// 		min-width: 100px;
+// 	}
+
+// 	&.no-desc{
+// 		.site-title a{
+// 			line-height: 55px;
+// 		}
+// 	}
+
+// 	&.has-desc{
+// 		.site-title{
+// 			line-height: 20px;
+// 		}
+// 		.site-title a{
+// 			line-height: 20px;
+// 			margin-top: 10px; 
+// 		}
+
+// 		.site-description{
+// 			margin-top: -20px;
+// 		}
+// 	}
+// }
+
+// .site-logo-div{
+// 	display: block;
+// 	vertical-align: middle;
 	
-	&:hover,
-	&:active,
-	&:focus{
-		color: $fontColor__blue;
-	}
-}
+// 	a{
+// 		float: left;
+// 	}
+// 	img{
+// 		max-width: 100px;
+// 		display: inline-block;
+// 		float: left;
+// 		vertical-align: middle;
+// 	}
 
-body{
-	font-family: $font__main;
-}
+// 	.logo-headline{
+// 		display: inline-block;
+// 		float: left;
+// 	}
 
-.site-header{
-	background: transparent;
-	padding: 10px;
-	position: absolute;
-	z-index: 2;
-	width: 100%;
+// 	// .site-title{
+// 	// 	// line-height: 10px;
+// 	// }
+// }
 
-	.sticky-header{
-		position:absolute;
-	}
-}
 
-.container{
-	max-width: 1500px;
-	margin: 0 auto;
-	// &>div{
-	// 	float: left;
-	// }
-}
+// .site-content{
+// 	.content-area,
+// 	.widget-area{
+// 		float:left;
+// 	}
+// }
 
-.site-branding{
-	max-width: 25%;
-	float: left;
-}
+// .content-area{
+// 	width: 75%
+// }
+// .widget-area{
+// 	width: 25%;
+// }
 
-.site-brand-inner{
-	&>div,
-	&>h1,
-	&>p{
-		display: inline-block;
-	}
+// ul.colelawson-menu{
+// 	margin-top: 22px;
+// }
+// .main-navigation{
+// 	padding-left: 20px;
 
-	&.no-desc{
-		.site-title a{
-			line-height: 55px;
-		}
-	}
+// 	li a {
+// 		padding: 15px;
+// 		text-transform: uppercase;
+// 		color: $white;
+// 		font-size: 16px;
+// 	}
 
-	&.has-desc{
-		.site-title{
-			line-height: 20px;
-		}
-		.site-title a{
-			line-height: 20px;
-			margin-top: 10px; 
-		}
+// 	ul ul a{
+// 		width: 250px;
+// 	}
+// }
 
-		.site-description{
-			margin-top: -20px;
-		}
-	}
-}
+// .colelawson-menu .menu-item-has-children{
+// 	position: relative;
 
-.site-logo-div{
-	display: block;
-	vertical-align: middle;
-	
-	a{
-		float: left;
-	}
-	img{
-		max-width: 100px;
-		display: inline-block;
-		float: left;
-		vertical-align: middle;
-	}
+// 	& > i.fa{
+// 		position: absolute;
+// 		right: 0;
+// 		top: 20px;
+// 		padding-left: 10px;
+// 		color: $white;
+// 	}
 
-	.logo-headline{
-		display: inline-block;
-		float: left;
-	}
+// 	& > .sub-menu{
+// 		background: $white;
+// 		top: 50px;
 
-	// .site-title{
-	// 	// line-height: 10px;
-	// }
-}
-.header-center-wrapper{
-	width: 60%;
-	float:left;
-	clear:none;
-}
+// 		& li {
 
-.header-right-wrapper{
-	width: 15%;
-	float: right;
-}
+// 			& a{
+// 				color: $fontColor_default;
+// 			}
 
-.site-content{
-	.content-area,
-	.widget-area{
-		float:left;
-	}
-}
+// 		}
+// 	}
+// }
 
-.content-area{
-	width: 75%
-}
-.widget-area{
-	width: 25%;
-}
+// .sub-menu .menu-item-has-children{
+// 	position: relative;
 
-ul.colelawson-menu{
-	margin-top: 22px;
-}
-.main-navigation{
-	padding-left: 20px;
+// 	& > i.fa{
+// 		position: absolute;
+// 		right: 10px;
+// 		top: 20px;
+// 		padding-left: 10px;
+// 		color: $fontColor_default;
+// 	}
 
-	li a {
-		padding: 15px;
-		text-transform: uppercase;
-		color: $white;
-		font-size: 16px;
-	}
+// 	& > .sub-menu{
+// 		background: $white;
+// 		top: 0;
 
-	ul ul a{
-		width: 250px;
-	}
-}
+// 		& li {
 
-.colelawson-menu .menu-item-has-children{
-	position: relative;
+// 			& a{
+// 				color: $fontColor_default;
+// 			}
 
-	& > i.fa{
-		position: absolute;
-		right: 0;
-		top: 20px;
-		padding-left: 10px;
-		color: $white;
-	}
-
-	& > .sub-menu{
-		background: $white;
-		top: 50px;
-
-		& li {
-
-			& a{
-				color: $fontColor_default;
-			}
-
-		}
-	}
-}
-
-.sub-menu .menu-item-has-children{
-	position: relative;
-
-	& > i.fa{
-		position: absolute;
-		right: 10px;
-		top: 20px;
-		padding-left: 10px;
-		color: $fontColor_default;
-	}
-
-	& > .sub-menu{
-		background: $white;
-		top: 0;
-
-		& li {
-
-			& a{
-				color: $fontColor_default;
-			}
-
-		}
-	}
-}
+// 		}
+// 	}
+// }

@@ -59,26 +59,41 @@ if ( ! function_exists( 'colelawson_site_header' ) ) {
     function colelawson_site_header(){
         ?>
         <header id="masthead" class="site-header" role="banner">
-            <div class="container">
+            <div class="container ps10">
                 <div class="site-branding">
                 <?php
-                colelawson_site_logo();
+                    colelawson_site_logo();
                 ?>
+                    
                 </div>
                 <!-- .site-branding -->
-
-                <div class="header-center-wrapper">
-                    <!-- <a href="#0" id="nav-toggle"><?php //_e('Primary Menu', 'colelawson'); ?><span></span></a> -->
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                <div class="header-right-wrapper">
+                    <?php custom_search_form(); ?>
+                    <nav id="site-navigation" class="main-navigation nav-header" role="navigation">
                         <ul class="colelawson-menu">
                             <?php wp_nav_menu(array('theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>
                         </ul>
                     </nav>
                 </div>
-
-                <div class="header-right-wrapper">
-                	<?php get_search_form(); ?>
+                <!-- <div class="header-right-wrapper"> -->
+                    
+                <!-- </div> -->
+                <div class="menu-toggle">
+                    <i class="fa fa-bars"></i>
                 </div>
+                
+            </div>
+
+            <div class="collapse-menu">
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <ul class="colelawson-menu">
+                        <?php wp_nav_menu(array('theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>
+                    </ul>
+                </nav>
+                <div class="collapse-search-form">
+                    <?php custom_search_form(); ?>
+                </div>
+
             </div>
         </header><!-- #masthead -->
         <?php

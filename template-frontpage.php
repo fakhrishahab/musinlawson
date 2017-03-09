@@ -24,7 +24,7 @@ get_header();
 
 </div><!-- #content -->
 
-<div class="site-content">
+<!-- <div class="site-content"> -->
 	<?php 
 		do_action('colelawson_frontpage_before_section_parts');
 
@@ -40,7 +40,7 @@ get_header();
 
 		do_action('colelawson_frontpage_after_section_parts');
 	?>
-</div>
+<!-- </div> -->
 
 <div class="service-image">
 

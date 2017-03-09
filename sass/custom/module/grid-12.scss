@@ -1,0 +1,131 @@
+*,*:after, *::after,*:before, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+::selection {
+    background: $c-1;
+    /* Safari */
+    color: #fff;
+}
+
+::-moz-selection {
+    background: $c-1;
+    /* Firefox */
+    color: #fff;
+}
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix {
+    clear: both;
+    &:before, &:after{
+        content: " ";
+        display: table;
+    }
+    &:after{
+        clear:both;
+    }
+}
+
+.wrap:before,
+.wrap:after {
+    display: table;
+    content: " "; }
+
+.wrap:after,
+.wrap:after {
+    clear: both; }
+
+.row {
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+    overflow-y: no-scroll;
+    padding:0 2px;
+}
+
+.row:before,
+.row:after {
+    display: table;
+    content: " "; }
+
+.row:after {
+    clear: both; }
+/*grid 12*/
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-7,
+.grid-8,
+.grid-9,
+.grid-10,
+.grid-11,
+.grid-12{
+    float: left;
+}
+.grid-1 {
+    width:(100% / 12) * 1; }
+.grid-2 {
+    width:(100% / 12) * 2; }
+.grid-3 {
+    width:(100% / 12) * 3; }
+.grid-4 {
+    width:(100% / 12) * 4; }
+.grid-5 {
+    width:(100% / 12) * 5; }
+.grid-6 {
+    width:(100% / 12) * 6; }
+.grid-7 {
+    width:(100% / 12) * 7; }
+.grid-8 {
+    width:(100% / 12) * 8; }
+.grid-9 {
+    width:(100% / 12) * 9; }
+.grid-10 {
+    width:(100% / 12) * 10; }
+.grid-11 {
+    width:(100% / 12) * 11; }
+.grid-12 {
+    width:(100% / 12) * 12; }
+.grid-gap [class^="grid-"],
+.grid-gap [class*="grid-"] {
+    padding: 0 $margin-m;
+    &:first-child{
+        padding-left: 0;
+    }
+    &:last-child{
+        padding-right: 0;
+    }
+}
+div [class^="grid-gap"],
+div [class*="grid-gap"]{
+    margin-bottom:$margin;
+    &:first-of-type{
+        //border:solid 1px red;
+    }
+    &:last-of-type{
+        margin-bottom:0;
+    }
+}
+@media all and (max-width:$screen-sm){
+    .grid-1,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-5,
+    .grid-6,
+    .grid-7,
+    .grid-8,
+    .grid-9,
+    .grid-10,
+    .grid-11,
+    .grid-12{
+        width:100%;
+    }
+    .grid-gap [class^="grid-"],
+    .grid-gap [class*="grid-"] {
+        padding: 0;
+    }
+}

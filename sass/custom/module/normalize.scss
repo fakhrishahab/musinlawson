@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+	word-wrap: break-word;
+	color: $c-4;
+}
+
+*:before,
+*:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+a{
+	text-decoration: none;
+	color: $fontColor_default;
+	
+	&:hover,
+	&:active,
+	&:focus{
+		color: $fontColor__blue;
+	}
+}
+
+body{
+	font-family: $font__main;
+	color: $c-4;
+	font-weight: 300;
+}
+
+h1,h2,h3,h4,h5{
+	margin: 0;
+}

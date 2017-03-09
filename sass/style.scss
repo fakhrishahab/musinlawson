@@ -111,8 +111,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Custom Style
 --------------------------------------------------------------*/
 @import "custom/vars/custom_vars";
+@import "custom/mixins";
 
 /*--------------------------------------------------------------
 # Custom Style
 --------------------------------------------------------------*/
 @import "custom/custom_style";
+@import "custom/media_queries";
