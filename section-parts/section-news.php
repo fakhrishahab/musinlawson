@@ -26,7 +26,7 @@ $recent_posts = wp_get_recent_posts($args, ARRAY_A);
 
 		<div class="news-wrapper">
 			<?php 
-			foreach ($recent_posts as $post) : setup_postdata();
+			foreach ($recent_posts as $post) : setup_postdata($post);
 				$link = wp_get_attachment_image_src(get_post_thumbnail_id($post['ID']), 'single-post-thumbnail');
 				// echo 'test';
 				// // echo var_dump($post);
@@ -38,8 +38,8 @@ $recent_posts = wp_get_recent_posts($args, ARRAY_A);
 						
 					</div>
 					<h2>
-						<a href="<?php get_permalink($post['ID']);?>">
-							<?php echo wp_trim_words($post['post_title'], 8, '...'); ?>
+						<a href="<?php the_permalink($post['ID']);?>">
+							<?php echo wp_trim_words($post['post_title'], 8, '...'); ?>asdasd
 						</a>
 					</h2>
 					<p class="news-content"><?php echo wp_trim_words($post['post_content'], 15, '  ...'); ?></p>
