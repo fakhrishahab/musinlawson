@@ -39,7 +39,7 @@ $recent_posts = wp_get_recent_posts($args, ARRAY_A);
 					</div>
 					<h2>
 						<a href="<?php get_permalink($post['ID']);?>">
-							<?php echo $post['post_title']; ?>
+							<?php echo wp_trim_words($post['post_title'], 8, '...'); ?>
 						</a>
 					</h2>
 					<p class="news-content"><?php echo wp_trim_words($post['post_content'], 15, '  ...'); ?></p>
