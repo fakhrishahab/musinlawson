@@ -68,7 +68,15 @@ if ( ! function_exists( 'colelawson_site_header' ) ) {
                 </div>
                 <!-- .site-branding -->
                 <div class="header-right-wrapper">
-                    <?php custom_search_form(); ?>
+                    <div class="fRight">
+                        <?php custom_search_form(); ?>
+                        <?php
+                        if(is_dynamic_sidebar('language_widget')){
+                            dynamic_sidebar('language_widget');
+                        }
+                        ?>
+                    </div>
+                    
                     <nav id="site-navigation" class="main-navigation nav-header" role="navigation">
                         <ul class="colelawson-menu">
                             <?php wp_nav_menu(array('theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'container' => '', 'items_wrap' => '%3$s')); ?>

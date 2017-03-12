@@ -132,6 +132,22 @@ function colelawson_customize_register( $wp_customize ) {
 				)
 			);
 
+			// About Title ID
+			$wp_customize->add_setting( 'colelawson_about_title_id',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Title ID', 'colelawson' ),
+					'transport'			=> 'refresh',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_about_title_id',
+				array(
+					'label'       => esc_html__('Title ID', 'colelawson'),
+					'section'     => 'colelawson_about_section',
+					'description' => ''
+				)
+			);
+
 			// About Description
 			$wp_customize->add_setting( 'colelawson_about_description',
 				array(
@@ -146,7 +162,29 @@ function colelawson_customize_register( $wp_customize ) {
 					'colelawson_about_description',
 					array(
 						// 'sanitize_callback' => 'sanitize_textarea',
-						'label'       => esc_html__('Descriptionss', 'colelawson'),
+						'label'       => esc_html__('Descriptions', 'colelawson'),
+						'section'     => 'colelawson_about_section',
+						'description' => '',
+						'type'		  => 'textarea'
+					)
+				)
+			);
+
+			// About Description ID
+			$wp_customize->add_setting( 'colelawson_about_description_id',
+				array(
+					'sanitize_callback' => 'sanitize_textarea',
+					'default'           => esc_html__( 'Description ID', 'colelawson' ),
+					'transport'			=> 'refresh',
+				)
+			);
+			$wp_customize->add_control( 
+				new WP_Customize_Control(
+					$wp_customize,
+					'colelawson_about_description_id',
+					array(
+						// 'sanitize_callback' => 'sanitize_textarea',
+						'label'       => esc_html__('Descriptions ID', 'colelawson'),
 						'section'     => 'colelawson_about_section',
 						'description' => '',
 						'type'		  => 'textarea'
@@ -165,6 +203,23 @@ function colelawson_customize_register( $wp_customize ) {
 			$wp_customize->add_control( 'colelawson_about_content',
 				array(
 					'label'       => esc_html__('Content', 'colelawson'),
+					'section'     => 'colelawson_about_section',
+					'description' => '',
+					'type'		  => 'textarea'
+				)
+			);
+
+			// About Content Id
+			$wp_customize->add_setting( 'colelawson_about_content_id',
+				array(
+					'sanitize_callback' => 'sanitize_textarea',
+					'default'           => esc_html__( 'Content ID', 'colelawson' ),
+					'transport'			=> 'refresh',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_about_content_id',
+				array(
+					'label'       => esc_html__('Content ID', 'colelawson'),
 					'section'     => 'colelawson_about_section',
 					'description' => '',
 					'type'		  => 'textarea'
@@ -233,6 +288,22 @@ function colelawson_customize_register( $wp_customize ) {
 				)
 			);
 
+			// Service Title Id
+			$wp_customize->add_setting( 'colelawson_service_title_id',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Service Title ID', 'colelawson' ),
+					'transport'			=> 'refresh',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_service_title_id',
+				array(
+					'label'       => esc_html__('Service Title ID', 'colelawson'),
+					'section'     => 'colelawson_services_settings',
+					'description' => ''
+				)
+			);
+
 			// Service Description
 			$wp_customize->add_setting( 'colelawson_service_description',
 				array(
@@ -250,44 +321,61 @@ function colelawson_customize_register( $wp_customize ) {
 				)
 			);
 
-			// Service Image
-			$wp_customize->add_setting('colelawson_service_image',
+			// Service Description
+			$wp_customize->add_setting( 'colelawson_service_description_id',
 				array(
-					'sanitize_callback' => 'colelawson_sanitize_repeatable_data_field',
-					'transport' 		=> 'refresh'
+					'sanitize_callback' => 'sanitize_text_field',
+					'default'           => esc_html__( 'Service Description ID', 'colelawson' ),
+					'transport'			=> 'refresh'
+				)
+			);
+			$wp_customize->add_control( 'colelawson_service_description_id',
+				array(
+					'label'       => esc_html__('Service Description ID', 'colelawson'),
+					'section'     => 'colelawson_services_settings',
+					'description' => '',
+					'type'		  => 'textarea'
 				)
 			);
 
-			$wp_customize->add_control(
-				new Colelawson_Customize_Repeatable_Control(
-					$wp_customize,
-					'colelawson_service_image',
-					array(
-						'label'			=> esc_html__('Service Images', 'colelawson'),
-						'description'	=> '',
-						'section'		=> 'colelawson_services_settings',
-                        'live_title_id' => 'title', // apply for unput text and textarea only
-                        'title_format'  => esc_html__('[live_title]', 'colelawson'), // [
-						'max_item'		=> 8,
-						'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/onepress-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=onepress_customizer#get-started">OnePress Plus</a> to be able to add more items and unlock other premium features!', 'onepress' ),
-						'fields'    => array(
-                            'title'  => array(
-                                'title' => esc_html__('Service Title', 'colelawson'),
-                                'type'  =>'text',
-                            ),
-                            'image' => array(
-								'title' => esc_html__('Image', 'colelawson'),
-								'type'  =>'media',
-								'desc'  => '',
-							),
-                            'link'  => array(
-                                'title' => esc_html__('URL', 'colelawson'),
-                                'type'  =>'text',
-                            ),
-                        ),
-					)
-				)
-			);
+			// // Service Image
+			// $wp_customize->add_setting('colelawson_service_image',
+			// 	array(
+			// 		'sanitize_callback' => 'colelawson_sanitize_repeatable_data_field',
+			// 		'transport' 		=> 'refresh'
+			// 	)
+			// );
+
+			// $wp_customize->add_control(
+			// 	new Colelawson_Customize_Repeatable_Control(
+			// 		$wp_customize,
+			// 		'colelawson_service_image',
+			// 		array(
+			// 			'label'			=> esc_html__('Service Images', 'colelawson'),
+			// 			'description'	=> '',
+			// 			'section'		=> 'colelawson_services_settings',
+   //                      'live_title_id' => 'title', // apply for unput text and textarea only
+   //                      'title_format'  => esc_html__('[live_title]', 'colelawson'), // [
+			// 			'max_item'		=> 8,
+			// 			'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/onepress-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=onepress_customizer#get-started">OnePress Plus</a> to be able to add more items and unlock other premium features!', 'onepress' ),
+			// 			'fields'    => array(
+   //                          'title'  => array(
+   //                              'title' => esc_html__('Service Title', 'colelawson'),
+   //                              'type'  =>'text',
+   //                          ),
+   //                          'image' => array(
+			// 					'title' => esc_html__('Image', 'colelawson'),
+			// 					'type'  =>'media',
+			// 					'desc'  => '',
+			// 				),
+   //                          'link'  => array(
+   //                              'title' => esc_html__('URL', 'colelawson'),
+   //                              'type'  =>'text',
+   //                          ),
+   //                      ),
+			// 		)
+			// 	)
+			// );
 
 			/* Industry Specialities Settings
 			----------------------------------------------------------------------*/
@@ -338,6 +426,25 @@ function colelawson_customize_register( $wp_customize ) {
 			    	)
 			    );
 
+			    // Specialities Title Id
+			    $wp_customize->add_setting(
+			    	'colelawson_specialies_title_id',
+			    	array(
+			    		'sanitize_callback' => 'colelawson_sanitize_text',
+			    		'transport' => 'refresh',
+			    		'default' => __('Section Title ID', 'colelawson'),
+			    	)
+			    );
+
+			    $wp_customize->add_control(
+			    	'colelawson_specialies_title_id',
+			    	array(
+			    		'label' => __('Section Title ID', 'colelawson'),
+			    		'section' => 'colelawson_specialities_section',
+			    		'type' => 'text'
+			    	)
+			    );
+
 			    // Specialities Description
 			    $wp_customize->add_setting(
 			    	'colelawson_specialities_description',
@@ -357,6 +464,26 @@ function colelawson_customize_register( $wp_customize ) {
 			    	)
 			    );
 
+			    // Specialities Description Id
+			    $wp_customize->add_setting(
+			    	'colelawson_specialities_description_id',
+			    	array(
+			    		'sanitize_callback' => 'sanitize_textarea',
+			    		'transport' => 'refresh',
+			    		'default' => __('Description ID', 'colelawson'),
+			    	)
+			    );
+
+			    $wp_customize->add_control(
+			    	'colelawson_specialities_description_id',
+			    	array(
+			    		'label' => __('Specialities Description ID', 'colelawson'),
+			    		'section' => 'colelawson_specialities_section',
+			    		'type' => 'textarea'
+			    	)
+			    );
+
+			    // Specialities Description Image
 			    $wp_customize->add_setting(
 			    	'colelawson_specialities_description_image',
 			    	array(
@@ -412,6 +539,25 @@ function colelawson_customize_register( $wp_customize ) {
 			    	)
 			    );
 
+			    // Specialities Video Title Id
+			    $wp_customize->add_setting(
+			    	'colelawson_specialities_video_description_id',
+			    	array(
+			    		'sanitize_callback' => 'sanitize_textarea',
+			    		'transport' => 'refresh',
+			    		'default' => __('Video Description ID', 'colelawson'),
+			    	)
+			    );
+
+			    $wp_customize->add_control(
+			    	'colelawson_specialities_video_description_id',
+			    	array(
+			    		'label' => __('Video Description ID', 'colelawson'),
+			    		'section' => 'colelawson_specialities_section',
+			    		'type' => 'textarea'
+			    	)
+			    );
+
 			    // Specialities Slider Image Title
 			    $wp_customize->add_setting(
 			    	'colelawson_specialities_slider_image_title',
@@ -424,6 +570,25 @@ function colelawson_customize_register( $wp_customize ) {
 
 			    $wp_customize->add_control(
 			    	'colelawson_specialities_slider_image_title',
+			    	array(
+			    		'label' => __('Slider Title ID', 'colelawson'),
+			    		'section' => 'colelawson_specialities_section',
+			    		'type' => 'text'
+			    	)
+			    );
+
+			    // Specialities Slider Image Title Id
+			    $wp_customize->add_setting(
+			    	'colelawson_specialities_slider_image_title_id',
+			    	array(
+			    		'sanitize_callback' => 'colelawson_sanitize_text',
+			    		'transport' => 'refresh',
+			    		'default' => __('Slider Title ID', 'colelawson'),
+			    	)
+			    );
+
+			    $wp_customize->add_control(
+			    	'colelawson_specialities_slider_image_title_id',
 			    	array(
 			    		'label' => __('Slider Title', 'colelawson'),
 			    		'section' => 'colelawson_specialities_section',
@@ -468,7 +633,100 @@ function colelawson_customize_register( $wp_customize ) {
 						)
 					)
 				);
+	
+		/* Contact Location Settings
+		----------------------------------------------------------------------*/
+		$wp_customize->add_section( 'colelawson_location_section' ,
+			array(
+				'priority'    => 3,
+				'title'       => esc_html__( 'Location', 'colelawson' ),
+				'description' => '',
+				'panel'       => 'colelawson_options',
+			)
+		);
 
+			// Location Hide Section
+			$show_location = get_theme_mod('colelawson_hide_location_section');
+
+			$wp_customize->add_setting( 'colelawson_hide_location_section',
+		        array(
+		            'sanitize_callback' => 'colelawson_sanitize_checkbox',
+		            'default'           => $show_location ? 1: 0,
+		        )
+		    );
+
+		    // Location Detail
+			$wp_customize->add_setting('colelawson_location_detail',
+				array(
+					'sanitize_callback' => 'colelawson_sanitize_repeatable_data_field',
+					'transport' 		=> 'refresh'
+				)
+			);
+
+			$wp_customize->add_control(
+				new Colelawson_Customize_Repeatable_Control(
+					$wp_customize,
+					'colelawson_location_detail',
+					array(
+						'label'			=> esc_html__('Location Detail', 'colelawson'),
+						'description'	=> 'Input your detail office location',
+						'section'		=> 'colelawson_location_section',
+                        'live_title_id' => 'country', // apply for unput text and textarea only
+                        'title_format'  => esc_html__('[live_title]', 'colelawson'), // [
+						'max_item'		=> 8,
+						'fields'    => array(
+                            'country'  => array(
+                                'title' => esc_html__('Country', 'colelawson'),
+                                'type'  =>'text',
+                            ),
+                            'description' => array(
+								'title' => esc_html__('Detail Address', 'colelawson'),
+								'type'  =>'textarea',
+								'desc'  => '',
+								'sanitize_callback' => 'sanitize_textarea'
+							),
+                            'latitude'  => array(
+                                'title' => esc_html__('Latitude', 'colelawson'),
+                                'type'  =>'text',
+                            ),
+                            'longitude'  => array(
+                                'title' => esc_html__('Longitude', 'colelawson'),
+                                'type'  =>'text',
+                            ),
+                        ),
+					)
+				)
+			);
+	
+		/* Footer Settings
+		----------------------------------------------------------------------*/
+		$wp_customize->add_section( 'colelawson_footer_section' ,
+			array(
+				'priority'    => 3,
+				'title'       => esc_html__( 'Footer Content', 'colelawson' ),
+				'description' => '',
+				'panel'       => 'colelawson_options',
+			)
+		);
+
+			// Specialities Slider Image Title
+		    $wp_customize->add_setting(
+		    	'colelawson_footer_copyright',
+		    	array(
+		    		'sanitize_callback' => 'colelawson_sanitize_text',
+		    		'transport' => 'refresh',
+		    		'default' => __('Copyright', 'colelawson'),
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	'colelawson_footer_copyright',
+		    	array(
+		    		'label' => __('Copyright', 'colelawson'),
+		    		'section' => 'colelawson_footer_section',
+		    		'type' => 'text'
+		    	)
+		    );
 
 	/**
 	 * Hook to add other customize

@@ -1,8 +1,15 @@
 <?php
+	$language = $_COOKIE['pll_language'];
+	if($language == 'id'){
+		$lang = '_id';
+	}else{
+		$lang = '';
+	}
+
 	$hide_about_section = get_theme_mod('colelawson_hide_about_section');
-	$about_title = get_theme_mod('colelawson_about_title');
-	$about_description = get_theme_mod('colelawson_about_description');
-	$about_content = get_theme_mod('colelawson_about_content');
+	$about_title = get_theme_mod('colelawson_about_title'.$lang);
+	$about_description = get_theme_mod('colelawson_about_description'.$lang);
+	$about_content = get_theme_mod('colelawson_about_content'.$lang);
 	$about_link = get_theme_mod('colelawson_about_link');
 
 	if(!$hide_about_section){
@@ -14,8 +21,8 @@
 		<div class="about-section-content-wrapper">
 			<div class="about-section-content row">
 				<div class="about-content grid-7">
-
-					<h1><?php echo $about_title; ?></h1>
+					<h1><?php echo $about_title; ?> - 
+					<?php echo $language;?></h1>
 					<?php echo htmlspecialchars_decode(esc_html($about_content)); ?>
 
 					<a href="<?php echo $about_link; ?>" class="read-more-link">Read Our Story</a>

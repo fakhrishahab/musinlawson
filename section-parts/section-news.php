@@ -21,7 +21,7 @@ $recent_posts = wp_get_recent_posts($args, ARRAY_A);
 		<div class="section-title">
 			<h1>News</h1>
 			<p>Check here for the latest updates from Musin & Lawson Communications.</p>
-			<a href="">SEE ALL</a>
+			<a href="<?php get_category_link(0);?>">SEE ALL </a>
 		</div>
 
 		<div class="news-wrapper">
@@ -39,7 +39,7 @@ $recent_posts = wp_get_recent_posts($args, ARRAY_A);
 					</div>
 					<h2>
 						<a href="<?php the_permalink($post['ID']);?>">
-							<?php echo wp_trim_words($post['post_title'], 8, '...'); ?>asdasd
+							<?php echo wp_trim_words($post['post_title'], 8, '...'); ?>
 						</a>
 					</h2>
 					<p class="news-content"><?php echo wp_trim_words($post['post_content'], 15, '  ...'); ?></p>

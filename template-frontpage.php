@@ -1,4 +1,5 @@
 <?php
+// $language = $_COOKIE['pll_language'];
 /**
 *Template Name: Front Page
 * @package colelawson
@@ -30,7 +31,12 @@ get_header();
 
 		if(! has_action('colelawson_frontpage_section_parts')) {
 			$sections = apply_filters('colelawson_frontpage_section_order', array(
-				'about', 'services', 'specialities', 'engaging', 'news', 'contact'
+				'about', 
+				'services', 
+				'specialities', 
+				// 'engaging', 
+				'news', 
+				'contact'
 			));
 
 			foreach ($sections as $section) {
@@ -42,9 +48,6 @@ get_header();
 	?>
 <!-- </div> -->
 
-<div class="service-image">
-
-</div>
 
 <?php
 

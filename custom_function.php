@@ -22,6 +22,36 @@ register_sidebar(
 );
 
 
+register_sidebar(
+	array(
+		'name' => __('Language Widget', 'colelawson'),
+		'id' => 'language_widget',
+		'description' => 'Showing widget to choose language',
+		'before_widget' => '<div class="languagewidget">',
+		'after_widget' => '</div>'
+	)
+);
+
+register_sidebar(
+	array(
+		'name' => __('Footer Location Widget', 'colelawson'),
+		'id' => 'footer_location_widget',
+		'description' => 'Show Location Office',
+		'before_widget' => '<div class="footer_location_widget">',
+		'after_widget' => '</div>'
+	)
+);
+
+register_sidebar(
+	array(
+		'name' => __('Footer Enquiry Widget', 'colelawson'),
+		'id' => 'footer_enquiry_widget',
+		'description' => 'Show Enquiry Form',
+		'before_widget' => '<div class="footer_enquiry_widget">',
+		'after_widget' => '</div>'
+	)
+);
+
 require(get_template_directory() . '/widgets/colelawson-service-widget.php');
 
 function homepage_scripts(){
