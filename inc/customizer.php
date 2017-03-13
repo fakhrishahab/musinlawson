@@ -633,6 +633,131 @@ function colelawson_customize_register( $wp_customize ) {
 						)
 					)
 				);
+
+		/* Engaging Settings
+		----------------------------------------------------------------------*/
+		$wp_customize->add_section( 'colelawson_engaging_section' ,
+			array(
+				'priority'    => 3,
+				'title'       => esc_html__( 'Engaging', 'colelawson' ),
+				'description' => '',
+				'panel'       => 'colelawson_options',
+			)
+		);
+
+			$show_engaging = get_theme_mod('colelawson_hide_engaging_section');
+
+			$wp_customize->add_setting( 'colelawson_hide_engaging_section',
+		        array(
+		            'sanitize_callback' => 'colelawson_sanitize_checkbox',
+		            'default'           => $show_engaging ? 1: 0,
+		        )
+		    );
+
+		    $wp_customize->add_control(
+		        'colelawson_hide_engaging_section',
+		        array(
+		            'label' 		=> esc_html__('Hide Engaging Section', 'colelawson'),
+		            'section' 		=> 'colelawson_engaging_section',
+		            'type'          => 'checkbox',
+		        )
+		    );
+
+		    // Engaging Title Section
+		    $wp_customize->add_setting(
+		    	'colelawson_engaging_title',
+		    	array(
+		    		'sanitize_callback' => 'colelawson_sanitize_text',
+		    		'transport' => 'refresh',
+		    		'default' => __('Engaging Title', 'colelawson'),
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	'colelawson_engaging_title',
+		    	array(
+		    		'label' => __('Engaging Title', 'colelawson'),
+		    		'section' => 'colelawson_engaging_section',
+		    		'type' => 'text'
+		    	)
+		    );
+
+		    // Engaging Title Section ID
+		    $wp_customize->add_setting(
+		    	'colelawson_engaging_title_id',
+		    	array(
+		    		'sanitize_callback' => 'colelawson_sanitize_text',
+		    		'transport' => 'refresh',
+		    		'default' => __('Engaging Title ID', 'colelawson'),
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	'colelawson_engaging_title_id',
+		    	array(
+		    		'label' => __('Engaging Title ID', 'colelawson'),
+		    		'section' => 'colelawson_engaging_section',
+		    		'type' => 'text'
+		    	)
+		    );
+
+		    // Engaging Title Description
+		    $wp_customize->add_setting(
+		    	'colelawson_engaging_description',
+		    	array(
+		    		'sanitize_callback' => 'sanitize_textarea',
+		    		'transport' => 'refresh',
+		    		'default' => __('Engaging Description', 'colelawson'),
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	'colelawson_engaging_description',
+		    	array(
+		    		'label' => __('Engaging Description', 'colelawson'),
+		    		'section' => 'colelawson_engaging_section',
+		    		'type' => 'textarea'
+		    	)
+		    );
+
+		    // Engaging Title Description
+		    $wp_customize->add_setting(
+		    	'colelawson_engaging_description_id',
+		    	array(
+		    		'sanitize_callback' => 'sanitize_textarea',
+		    		'transport' => 'refresh',
+		    		'default' => __('Engaging Description ID', 'colelawson'),
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	'colelawson_engaging_description_id',
+		    	array(
+		    		'label' => __('Engaging Description ID', 'colelawson'),
+		    		'section' => 'colelawson_engaging_section',
+		    		'type' => 'textarea'
+		    	)
+		    );
+
+		    // Engaging Background Image
+		    $wp_customize->add_setting(
+		    	'colelawson_engaging_image',
+		    	array(
+		    		'transposrt' => 'refresh'
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	new WP_Customize_Upload_Control(
+		    		$wp_customize,
+		    		'colelawson_engaging_image',
+		    		array(
+		    			'label' => __('Engaging Background', 'colelawson'),
+		    			'section' => 'colelawson_engaging_section',
+		    			'setting' => 'colelawson_engaging_image'
+		    		)
+		    	)
+		    );
 	
 		/* Contact Location Settings
 		----------------------------------------------------------------------*/
