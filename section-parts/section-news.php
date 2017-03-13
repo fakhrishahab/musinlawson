@@ -46,6 +46,7 @@ $recent_posts = wp_get_recent_posts($args, ARRAY_A);
 					<p class="news-date">
 						<?php echo get_the_date('F j, Y', $post['ID']);?>
 					</p>
+					
 					<ul class="news-tags">
 						<li><a href="">#news</a></li>
 						<li><a href="">#test</a></li>

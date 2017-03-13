@@ -95,6 +95,53 @@ function cus_enqueue($hook){
 }
 add_action('admin_enqueue_scripts', 'hrw_enqueue');
 
+function adding_custom_meta_boxes( $post ) {
+    add_meta_box( 
+        'my-meta-box',
+        __( 'Quotes' ),
+        'render_my_meta_box',
+        'post',
+        'normal',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes_post', 'adding_custom_meta_boxes' );
+
+function render_my_meta_box($post){
+	global $post;
+    $values = get_post_custom( $post->ID );
+	$values = get_post_custom( $post->ID );
+	$text = isset( $values['my_meta_box_text'] ) ? esc_attr( $values['my_meta_box_text'][0] ) :'';
+
+    // We'll use this nonce field later on when saving.
+    wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	?>
+		<div style="width: 100%">
+			<label for="my_meta_box_text">Quotes</label>
+		</div>
+		<div style="width: 100%">
+			<textarea style="width:100%;min-height:150px" name="my_meta_box_text" id="my_meta_box_text"><?php echo $text; ?></textarea>	
+		</div>
+		
+	<?php
+}
+
+add_action( 'save_post', 'cd_meta_box_save' );
+
+function cd_meta_box_save($post_id){
+	// Bail if we're doing an auto save
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+     
+    // if our nonce isn't there, or we can't verify it, bail
+    if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
+     
+    // if our current user can't edit this post, bail
+    if( !current_user_can( 'edit_post' ) ) return;
+
+    // Make sure your data is set before trying to save it
+    if( isset( $_POST['my_meta_box_text'] ) )
+        update_post_meta( $post_id, 'my_meta_box_text', wp_kses( $_POST['my_meta_box_text'], $allowed ) );
+}
 
 function custom_search_form() {
 ?>
@@ -107,4 +154,6 @@ function custom_search_form() {
 <?php
 }
 add_action('custom_search_form', 'custom_search_form');
+
+
 ?>
