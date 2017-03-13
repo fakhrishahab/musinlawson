@@ -8,8 +8,9 @@
  */
 
 ?>
-
+<div class="container header-gap">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <?php echo the_post_thumbnail('thumbnail-medium');?>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -45,3 +46,4 @@
 		<?php colelawson_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+</div>

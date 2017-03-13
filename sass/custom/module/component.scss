@@ -1,9 +1,10 @@
-header{
+.site-header{
 	position: fixed;
 	z-index: 5;
 	width: 100%;
 	background: $c-1;
 	// @include box-shadow(0px 2px 100px #000);
+        
 }
 
 .container{
