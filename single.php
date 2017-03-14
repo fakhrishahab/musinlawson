@@ -9,13 +9,21 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area singlephp">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
+			$catArr = [];
+			foreach ((get_the_category()) as $category) {
+				array_push($catArr, $category->cat_name);
+			}
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			if(in_array('services', $catArr)){
+				get_template_part('template-parts/content', 'service');
+			}else{
+				get_template_part( 'template-parts/content', get_post_format() );	
+			}			
 
 			the_post_navigation();
 
