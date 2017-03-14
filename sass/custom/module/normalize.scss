@@ -11,6 +11,13 @@
 	display: block;
 }
 
+strong, em, u, b{
+	&:before,
+	&:after{
+		display: none;
+	}
+}
+
 a{
 	text-decoration: none;
 	color: $fontColor_default;
@@ -38,4 +45,8 @@ h1,h2,h3,h4,h5{
 .inner{
 	display: table-cell;
 	vertical-align: middle;
+}
+
+.full-width{
+	width:100%;
 }

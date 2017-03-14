@@ -68,7 +68,7 @@ if ( ! function_exists( 'colelawson_site_header' ) ) {
                 </div>
                 <!-- .site-branding -->
                 <div class="header-right-wrapper">
-                    <div class="fRight">
+                    <div class="widget-header-wrapper fRight">
                         <?php custom_search_form(); ?>
                         <?php
                         if(is_dynamic_sidebar('language_widget')){

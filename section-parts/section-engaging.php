@@ -35,7 +35,7 @@ $engaging = wp_get_recent_posts($args, ARRAY_A);
 	<div class="container">
 		<div class="engaging-section-content-wrapper">
 			<div class="engaging-section-content row">
-				<div class="engaging-content grid-7">
+				<div class="engaging-content home-content grid-7">
 					<h1><?php echo $engaging[0]['post_title'] ?></h1>
 					<p><?php echo apply_filters('the_content',$engaging[0]['post_content']); ?>
 
@@ -43,7 +43,7 @@ $engaging = wp_get_recent_posts($args, ARRAY_A);
 				</div>
 
 				<div class="engaging-description grid-5 outer">
-					<div class="engaging-description-content inner">
+					<div class="engaging-description-content home-description-content inner">
 						<?php echo apply_filters('the_content', get_post_meta($engaging[0]['ID'], 'my_meta_box_text', true)); ?>	
 					</div>
 				</div>
