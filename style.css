@@ -1565,6 +1565,30 @@ section.engaging-section {
   padding: 15px;
   font-weight: 400; }
 
+.jumbotron-header {
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; }
+  .jumbotron-header:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 38, 100, 0.7); }
+  .jumbotron-header-title {
+    color: #FFF;
+    text-align: center;
+    opacity: .999; }
+  .jumbotron-header h1 {
+    color: #FFF;
+    font-size: 70px;
+    font-family: "Source Sans Pro", sans-serif;
+    text-transform: uppercase; }
+
 .p10 {
   padding: 10px; }
 

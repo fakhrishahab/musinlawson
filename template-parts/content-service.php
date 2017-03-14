@@ -6,8 +6,16 @@
  *
  * @package colelawson
  */
-
+	
+	$link = wp_get_attachment_image_src(get_post_thumbnail_id(the_ID()), 'thumbnail-medium');
+	var_dump($link);
 ?>
+
+<div class="jumbotron-header outer" style="background-image:url(<?php echo $link[0];?>)">
+	<div class="jumbotron-header-title inner">
+		<h1><?php the_title();?>XXX</h1>
+	</div>
+</div>
 
 <div class="container header-gap">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
