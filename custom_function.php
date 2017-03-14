@@ -110,7 +110,7 @@ add_action( 'add_meta_boxes_post', 'adding_custom_meta_boxes' );
 function render_my_meta_box($post){
 	global $post;
     $values = get_post_custom( $post->ID );
-	$values = get_post_custom( $post->ID );
+	// $values = get_post_custom( $post->ID );
 	$text = isset( $values['my_meta_box_text'] ) ? esc_attr( $values['my_meta_box_text'][0] ) :'';
 
     // We'll use this nonce field later on when saving.
@@ -148,7 +148,8 @@ function custom_search_form() {
 	<form method="get" class="custom_search_form" action="<?php bloginfo('home'); ?>/">
 		<div class="custom_search_wrapper">
 			<input class="custom_search_text" type="text" placeholder="Search" name="s" id="s" />
-			<i class="fa fa-search"></i>
+			<button type="submit"><i class="fa fa-search"></i></button>
+			
 		</div>
 	</form>
 <?php

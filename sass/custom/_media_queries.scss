@@ -2,18 +2,39 @@
 	.container{
 		width: 1200px!important;
 	}
+	.option-language{
+		span{
+			display:inline-block;
+		}
+	}
 }
 
 @media(max-width: 1200px){
+	.option-language{
+		span{
+			display:inline-block;
+		}
+	}
 	.container{
 		width: 100%!important;
 	}
 	.about-section-content-wrapper{
 		width: 100%!important;
 	}
+
+	.main-navigation a{
+		font-size: 14px;
+		margin-right: 5px;
+		padding: 15px 10px;
+	}
 }
 
-@media (max-width: 1014px){
+@media (max-width: 1024px){
+	.option-language{
+		span{
+			display:inline-block;
+		}
+	}
 	// .site-branding{
 	// 	width: 100%;
 	// }
@@ -21,12 +42,33 @@
 	// 	display: none;
 	// }
 
-	.collapse-search-form .custom_search_form{
+	.collapse-search-form .custom_search_form,
+	.custom_search_wrapper{
 		display: block;
+		width: 350px!important;
+
+		input{
+			width: 270px;
+		}
+		button{
+			width: 20px;
+		}
 	}
 }
 
 @media (max-width:930px){
+	.option-language{
+		span{
+			display:inline-block;
+		}
+	}
+	.collapse-menu{
+		max-height: 70vh;
+		overflow-y: auto;
+	}
+	.site-header{
+		height: 90px;
+	}
 	.site-branding{
 		width: auto;
 		height: 80px;
@@ -43,19 +85,38 @@
 			// height: 80px;
 		}
 	}
+	.header-right-wrapper{
+		width: auto;
+	}
 	.menu-toggle{
 		display: block;
+		margin: 30px;
+
+		.fa{
+			font-size: 25px!important;
+		}
 	}
 	.nav-header{
 		display: none;
 	}
+	.languagewidget{
+		margin-right: 50px;
+		margin-top: 10px;
 
+		span{
+			font-size: 14px!important;
+		}
+		img{
+			width: 20px;
+		}
+	}
 	.custom_search_form{
 		display: none;
 	}
 
 	.collapse-menu{
 		z-index: 3;
+		top: 90px;
 		.main-navigation ul{
 			display: block;
 		}
@@ -65,11 +126,85 @@
 		z-index: 1!important;
 		opacity: 1!important;
 	}
+
+	.about-content,
+	.about-description,
+	.section-title,
+	.service-wrapper,
+	.engaging-content,
+	.engaging-description,
+	.news-wrapper,
+	.single-content{
+		padding: 20px!important;
+	}
+
+	section{
+		h1{
+			line-height: 65px;
+		}
+	}
+
+	.section-title{
+		h1{
+			margin-bottom: 20px;
+		}
+	}
+
+	.news-section .section-title a{
+		bottom: 40px;
+		right: 20px;
+	}
 }
 
 @media (max-width: 600px){
+	.option-language{
+		span{
+			display:inline-block;
+		}
+	}
 	.about-description{
 		height: auto!important;
 		margin-bottom: 20px;
+	}
+
+	.specialities-right{
+		width: 100%!important;
+	}
+
+	.news-section .section-title a{
+		bottom: 0;
+		right: 20px;
+	}
+
+	.news-section .news-wrapper .news-item-wrapper{
+		width: 100%!important;
+		margin-bottom: 20px!important;
+	}
+
+	.footer-enquiry{
+		padding: 20px!important;
+	}
+}
+
+@media (max-width: 450px){
+	.option-language{
+		span{
+			display:none!important;
+		}
+	}
+
+	.languagewidget ul{
+		right: 10px; 
+	}
+
+	.jumbotron-header{
+		margin-top: 60px;
+		height: 300px!important;
+	}
+	.jumbotron-header-title{
+		h1{
+			line-height: 60px;
+			font-size: 50px; 
+		}
 	}
 }

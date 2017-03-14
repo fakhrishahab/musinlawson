@@ -9,65 +9,47 @@ $arrLocation = get_theme_mod('colelawson_location_detail');
 				<div class="section-title">
 					<h1>Contact</h1>
 				</div>
-				
+
 				<div class="location-wrapper">
-					<div class="row">
-					<?php
-					if(!empty($arrLocation) && is_array($arrLocation) ){
+					<div class="location-tabs">
+						<?php  
+						if(!empty($arrLocation) && is_array($arrLocation) ){
 						// echo var_dump($arrLocation);
-						foreach ($arrLocation as $key => $value) {
-							$arrLocation[$key] = wp_parse_args($value, array(
-									'country' => '',
-									'description' => '',
-									'latitude' => '',
-									'longitude' => ''
-								)
-							);
+							foreach ($arrLocation as $key => $value) {
+								$arrLocation[$key] = wp_parse_args($value, array(
+										'country' => '',
+									)
+								);
 						?>
-						
-							<div class="grid-6">
-								<div class="location-info">
-									<h2><?php echo $arrLocation[$key]['country']; ?></h2>
-									<div class="location-desc">
-										<?php echo htmlspecialchars_decode(esc_html($arrLocation[$key]['description'])); ?>
-									</div>
-								</div>
-								
-							</div>
-							
-
+							<div class="tabs-trigger" data-target="<?php echo 'tab'.$key;?>"><?php echo $arrLocation[$key]['country']; ?></div>
 						<?php
-						}
-					}
-					?>
-					</div>	
+							}
 
-					<div class="row">
-					<?php 
-					if(!empty($arrLocation) && is_array($arrLocation) ){
-						// echo var_dump($arrLocation);
-						foreach ($arrLocation as $key => $value) {
-							$arrLocation[$key] = wp_parse_args($value, array(
-									'country' => '',
-									'description' => '',
-									'latitude' => '',
-									'longitude' => ''
-								)
-							);
+							foreach ($arrLocation as $key => $value) {
+								$arrLocation[$key] = wp_parse_args($value, array(
+										'country' => '',
+										'description' => '',
+										'latitude' => '',
+										'longitude' => ''
+									)
+								); 
 						?>
-						<div class="grid-6">
-							<div class="location-map"
+							<div class="tabs-content" id="<?php echo 'tab'.$key;?>">
+								<div class="location-info">
+									<?php echo htmlspecialchars_decode(esc_html($arrLocation[$key]['description'])); ?>
+								</div>
+								<div class="location-map"
 								id="location-map<?php echo $key;?>"data-lat="<?php echo $arrLocation[$key]['latitude'];?>"
 								data-lng="<?php echo $arrLocation[$key]['longitude'];?>">
 									
+								</div>
 							</div>
-						</div>
-					<?php
+						<?php
+							}
 						}
-					}
-					?>
+						?>
 					</div>
-				</div>
+				</div>				
 				
 			</div>
 		</div>

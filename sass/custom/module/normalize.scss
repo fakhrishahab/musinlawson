@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	word-wrap: break-word;
-	color: $c-4;
+	color: $c-black;
 }
 
 /**:before,
@@ -10,6 +10,13 @@
 	clear: both;
 	display: block;
 }*/
+
+strong, em, u, b{
+	&:before,
+	&:after{
+		display: none;
+	}
+}
 
 a{
 	text-decoration: none;
@@ -24,10 +31,22 @@ a{
 
 body{
 	font-family: $font__main;
-	color: $c-4;
+	color: #000;
 	font-weight: 300;
 }
 
 h1,h2,h3,h4,h5{
 	margin: 0;
+}
+
+.outer{
+	display: table;
+}
+.inner{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.full-width{
+	width:100%;
 }

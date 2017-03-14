@@ -49,6 +49,7 @@ function colelawson_setup() {
 	add_image_size( 'onepress-blog-small', 300, 150, true );
 	add_image_size( 'onepress-small', 480, 300, true );
 	add_image_size( 'thumbnail-medium', 640, 400, true );
+	add_image_size( 'thumbnail-large', 1200, 800, true );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -59,7 +60,7 @@ function colelawson_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'colelawson' ),
+		'menu-1' => esc_html__( 'Primary', 'colelawson' )
 	) );
 
 	/*
