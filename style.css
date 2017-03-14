@@ -742,7 +742,7 @@ object {
 * {
   box-sizing: border-box;
   word-wrap: break-word;
-  color: #777777; }
+  color: #000; }
 
 *:before,
 *:after {
@@ -758,11 +758,18 @@ a {
 
 body {
   font-family: "Source Sans Pro", sans-serif;
-  color: #777777;
+  color: #000;
   font-weight: 300; }
 
 h1, h2, h3, h4, h5 {
   margin: 0; }
+
+.outer {
+  display: table; }
+
+.inner {
+  display: table-cell;
+  vertical-align: middle; }
 
 *, *:after, *::after, *:before, *::before {
   -webkit-box-sizing: border-box;
@@ -1131,9 +1138,8 @@ section.about-section .about-section-content-wrapper {
     padding: 0 !important;
     overflow: hidden; }
   section.about-section .about-section-content-wrapper .about-content {
-    padding: 0 30px;
-    font-weight: 600;
-    padding-bottom: 50px; }
+    padding: 0 50px 50px 0px;
+    font-weight: 600; }
     section.about-section .about-section-content-wrapper .about-content h1 {
       text-align: left;
       font-weight: 200; }
@@ -1154,7 +1160,7 @@ section.about-section .about-section-content-wrapper {
   section.about-section .about-section-content-wrapper .about-description {
     background: #002664;
     height: 100%;
-    padding: 40px;
+    padding: 0 0 0 40px;
     font-family: "Poly";
     font-size: 30px;
     color: #FFF;
@@ -1167,13 +1173,6 @@ section.about-section .about-section-content-wrapper {
       color: #FFF;
       font-style: italic;
       font-weight: 300; }
-    section.about-section .about-section-content-wrapper .about-description:before {
-      width: 30%;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      height: 7px;
-      background: #FFF;
-      position: relative; }
     section.about-section .about-section-content-wrapper .about-description:after {
       width: 0;
       height: 0;
@@ -1184,6 +1183,13 @@ section.about-section .about-section-content-wrapper {
       left: -20px;
       top: 45%;
       bottom: 45%; }
+  section.about-section .about-section-content-wrapper .about-description-content:before {
+    width: 30%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 7px;
+    background: #FFF;
+    position: relative; }
 
 .section-services {
   background: #f5f5f5; }
@@ -1193,7 +1199,7 @@ section.about-section .about-section-content-wrapper {
   text-align: left;
   position: relative; }
   .section-title h1 {
-    color: #777777; }
+    color: #000; }
   .section-title p {
     font-weight: 400; }
 
@@ -1348,6 +1354,64 @@ section.about-section .about-section-content-wrapper {
     .specialities-right .specialities-slider-image-wrapper .swiper-wrapper img {
       height: 70px; }
 
+section.engaging-section {
+  background: #002664; }
+  section.engaging-section .engaging-section-content-wrapper {
+    z-index: 4;
+    color: #FFF;
+    width: 1200px;
+    position: relative; }
+    section.engaging-section .engaging-section-content-wrapper .engaging-section-content {
+      padding: 0 !important;
+      overflow: hidden; }
+    section.engaging-section .engaging-section-content-wrapper .engaging-content {
+      padding: 0 50px 50px 0px;
+      font-weight: 600; }
+      section.engaging-section .engaging-section-content-wrapper .engaging-content h1 {
+        text-align: left;
+        font-weight: 200;
+        color: #FFF; }
+      section.engaging-section .engaging-section-content-wrapper .engaging-content p {
+        color: #FFF;
+        font-weight: 400; }
+      section.engaging-section .engaging-section-content-wrapper .engaging-content a {
+        float: left;
+        border: 1px solid #FFF;
+        padding: 9px 7px;
+        color: #FFF;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        -webkit-border-radius: 2px !important;
+        -moz-border-radius: 2px !important;
+        -ms-border-radius: 2px !important;
+        border-radius: 2px !important; }
+        section.engaging-section .engaging-section-content-wrapper .engaging-content a:before, section.engaging-section .engaging-section-content-wrapper .engaging-content a:after {
+          content: none; }
+    section.engaging-section .engaging-section-content-wrapper .engaging-description {
+      background: #002664;
+      height: 100%;
+      padding: 0 0 0 40px;
+      font-family: "Poly";
+      font-size: 30px;
+      color: #FFF;
+      font-style: italic;
+      font-weight: 300;
+      position: relative; }
+      section.engaging-section .engaging-section-content-wrapper .engaging-description p {
+        font-family: "Poly";
+        font-size: 30px;
+        color: #FFF;
+        font-style: italic;
+        font-weight: 300; }
+    section.engaging-section .engaging-section-content-wrapper .engaging-description-content:before {
+      width: 30%;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      height: 7px;
+      background: #FFF;
+      position: relative; }
+
 .news-section .section-title a {
   position: absolute;
   right: 0;
@@ -1428,21 +1492,37 @@ section.about-section .about-section-content-wrapper {
   -o-box-shadow: 0px 0px 15px #CCC;
   box-shadow: 0px 0px 15px #CCC;
   margin-bottom: 50px; }
-  .location-wrapper > .row {
-    padding: 0; }
-    .location-wrapper > .row > div:first-child {
-      border-right: 1px solid #CCC; }
-  .location-wrapper .location-info {
-    padding: 20px; }
-    .location-wrapper .location-info h2 {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 15px; }
-    .location-wrapper .location-info .location-desc {
-      font-weight: 400; }
-  .location-wrapper .location-map {
+  .location-wrapper .location-tabs {
     width: 100%;
-    height: 250px; }
+    display: block;
+    background: #f5f5f5; }
+    .location-wrapper .location-tabs .tabs-trigger {
+      display: inline-block;
+      padding: 15px 40px;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer; }
+      .location-wrapper .location-tabs .tabs-trigger.active {
+        background: #FFF;
+        cursor: default; }
+    .location-wrapper .location-tabs .tabs-content {
+      background: #FFF;
+      display: none;
+      -webkit-transition: display .5s ease;
+      -moz-transition: display .5s ease;
+      -o-transition: display .5s ease;
+      transition: display .5s ease; }
+      .location-wrapper .location-tabs .tabs-content.show {
+        display: block !important;
+        -webkit-transition: display .5s ease;
+        -moz-transition: display .5s ease;
+        -o-transition: display .5s ease;
+        transition: display .5s ease; }
+    .location-wrapper .location-tabs .location-info {
+      padding: 30px; }
+    .location-wrapper .location-tabs .location-map {
+      width: 100%;
+      height: 250px; }
 
 .footer-enquiry {
   background: #002664;

@@ -110,7 +110,7 @@ add_action( 'add_meta_boxes_post', 'adding_custom_meta_boxes' );
 function render_my_meta_box($post){
 	global $post;
     $values = get_post_custom( $post->ID );
-	$values = get_post_custom( $post->ID );
+	// $values = get_post_custom( $post->ID );
 	$text = isset( $values['my_meta_box_text'] ) ? esc_attr( $values['my_meta_box_text'][0] ) :'';
 
     // We'll use this nonce field later on when saving.

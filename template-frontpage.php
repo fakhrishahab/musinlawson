@@ -34,7 +34,7 @@ get_header();
 				'about', 
 				'services', 
 				'specialities', 
-				// 'engaging', 
+				'engaging', 
 				'news', 
 				'contact'
 			));

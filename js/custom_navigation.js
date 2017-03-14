@@ -85,10 +85,23 @@ jQuery(document).ready(function($){
 		$('ul', '.languagewidget').hide();
 	});
 
+	$('.tabs-trigger').on('click', function(){
+		if(! $(this).hasClass('active')){
+			var id = $(this).data('target');
+			$(this).addClass('active');
+			$(this).siblings().removeClass('active');
+			$('.tabs-content#'+id).addClass('show');
+			$('.tabs-content#'+id).siblings().removeClass('show');
+			initMap();
+			setFooterEnquiryHeight();
+		}
+	})
+
 	setDescriptionHeight();
 	arrangeAboutSection();
 	setSpecialitiesRightSectionHeight();
 	setFooterEnquiryHeight();
+	setLocationTabDefault();
 });
 
 jQuery(window).resize(function(){
@@ -98,6 +111,14 @@ jQuery(window).resize(function(){
 	setFooterEnquiryHeight();
 });
 
+function setLocationTabDefault(){
+	var defaultTab = 'tab0';
+	jQuery('.tabs-content').hide();
+	jQuery('.tabs-trigger[data-target='+defaultTab+']').addClass('active', 500);
+	jQuery('.tabs-content#'+defaultTab).addClass('show', 500);
+	setFooterEnquiryHeight();
+}
+
 function setFooterEnquiryHeight(){
 	var footerHeight = jQuery('.contact-section').outerHeight();
 	jQuery('.footer-enquiry').css('height', footerHeight);
@@ -106,6 +127,9 @@ function setFooterEnquiryHeight(){
 function setDescriptionHeight(){
 	var aboutHeight = jQuery('.about-content').outerHeight();
 	jQuery('.about-description').css('height', aboutHeight);
+
+	var engagingHeight = jQuery('.engaging-content').outerHeight();
+	jQuery('.engaging-description').css('height', engagingHeight);
 }
 
 function setSpecialitiesRightSectionHeight(){
