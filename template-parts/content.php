@@ -8,10 +8,13 @@
  */
 
 ?>
-<div class="container header-gap">
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <?php echo the_post_thumbnail('thumbnail-medium');?>
-	<header class="entry-header">
+<article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div class="post-img">
+                    <?php echo the_post_thumbnail('thumbnail-medium');?>
+                </div>
+                <div class="post-content-wrap">
+                    <div class="post-content">
+                         <header class="entry-header">
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -29,7 +32,7 @@
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
+			the_excerpt( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'colelawson' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
@@ -45,5 +48,6 @@
 	<footer class="entry-footer">
 		<?php colelawson_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+                    </div>
+                </div>
 </article><!-- #post-## -->
-</div>

@@ -14,9 +14,11 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+	<div id="primary" class="header-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="grid-9 p20">
+                        <main id="main" class="site-main" role="main">
 		<?php
 		if ( have_posts() ) :
 
@@ -38,19 +40,25 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
 
-			endwhile;
+			endwhile;?>
+                            
+                            <?php the_posts_pagination();?>
 
-			the_posts_navigation();
-
-		else :
+		<?php else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
 
 		</main><!-- #main -->
+                    </div>
+                    <div class="grid-3 p20">
+                        <?php get_sidebar();?>
+                    </div>
+                </div>
+            </div>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

@@ -4,12 +4,12 @@
 	color: $c-4;
 }
 
-*:before,
+/**:before,
 *:after{
 	content: '';
 	clear: both;
 	display: block;
-}
+}*/
 
 a{
 	text-decoration: none;
