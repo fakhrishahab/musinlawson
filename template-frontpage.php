@@ -9,7 +9,7 @@ get_header();
 ?>
 
 
-<div id="content" class="site-content">
+<div id="top-content" class="site-content">
 
 	<?php 
 	if ( is_front_page() && !is_paged() && is_dynamic_sidebar('headerwidget') ) {

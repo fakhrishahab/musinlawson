@@ -1497,10 +1497,6 @@ section.engaging-section {
     -ms-border-radius: 3px !important;
     border-radius: 3px !important;
     padding: 15px; }
-    .news-section .news-wrapper .news-item-wrapper:first-child {
-      margin-left: -1.5%; }
-    .news-section .news-wrapper .news-item-wrapper:last-child {
-      margin-right: -1.5%; }
     .news-section .news-wrapper .news-item-wrapper .news-thumbnail {
       background-position: center !important;
       background-size: cover !important;
@@ -1608,14 +1604,27 @@ section.engaging-section {
       font-weight: 400 !important; }
 
 .site-footer {
-  text-align: left;
   color: #FFF;
   width: 100%;
   padding: 15px;
   font-weight: 400;
   background: #002664; }
-  .site-footer div {
-    color: #FFF; }
+  .site-footer .footer-text {
+    color: #FFF;
+    float: left;
+    padding-top: 10px; }
+  .site-footer .btn-to-top {
+    cursor: pointer;
+    float: right;
+    background: #FFF;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    -ms-border-radius: 3px !important;
+    border-radius: 3px !important; }
+    .site-footer .btn-to-top .fa {
+      font-size: 24px;
+      padding: 10px 14px;
+      color: #000; }
 
 .jumbotron-header {
   width: 100%;

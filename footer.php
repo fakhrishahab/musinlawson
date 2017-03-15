@@ -22,9 +22,19 @@ $footer_content = get_theme_mod('colelawson_footer_copyright');
 	</footer> -->
 
 	<footer class="site-footer">
-		<div>
-			<?php echo esc_html__($footer_content); ?>
+		<div class="container">
+			<div class="footer-text">
+				<?php echo esc_html__($footer_content); ?>
+			</div>
+			
+			<a href="#top-content">
+				<div class="btn-to-top">
+					<i class="fa fa-angle-up"></i>
+				</div>
+			</a>
+			
 		</div>
+		
 	</footer>
 </div><!-- #page -->
 

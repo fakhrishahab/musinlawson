@@ -1,8 +1,9 @@
 <?php
+$category_name = 'news';
 $args = array(
 		'numberposts' => 3,
 		'offset' => 0,
-		'category_name' => 'news',
+		'category_name' => $category_name,
 		'orderby' => 'post_date',
 		'order' => 'DESC',
 		'include' => '',
@@ -15,19 +16,22 @@ $args = array(
 	);
 
 $recent_posts = wp_get_recent_posts($args, ARRAY_A);
+$category_id = get_cat_ID($category_name);
 ?>
 <section class="news-section" id="news-section">
 	<div class="container">
 		<div class="section-title">
 			<h1>News</h1>
 			<p>Check here for the latest updates from Musin & Lawson Communications.</p>
-			<a href="<?php get_category_link(0);?>">SEE ALL </a>
+			<a href="<?php echo get_category_link($category_id);?>">SEE ALL</a>
 		</div>
 
 		<div class="news-wrapper">
 			<?php 
 			foreach ($recent_posts as $post) : setup_postdata($post);
 				$link = wp_get_attachment_image_src(get_post_thumbnail_id($post['ID']), 'single-post-thumbnail');
+
+				// var_dump(wp_get_post_tags($post['ID']));
 				// echo 'test';
 				// // echo var_dump($post);
 				// $t = wp_get_post_tags($post['ID']);
@@ -48,9 +52,13 @@ $recent_posts = wp_get_recent_posts($args, ARRAY_A);
 					</p>
 					
 					<ul class="news-tags">
-						<li><a href="">#news</a></li>
-						<li><a href="">#test</a></li>
-						<li><a href="">#services</a></li>
+						<?php
+						foreach(wp_get_post_tags($post['ID']) as $tags) {
+						?>
+							<li><a href="<?php echo get_tag_link($tags->term_id);?>"><?php echo '#'.$tags->name;?></a></li>
+						<?php
+						}
+						?>
 					</ul>
 				</div>
 			<?php
