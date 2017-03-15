@@ -36,7 +36,7 @@ $about = wp_get_recent_posts($args, ARRAY_A);
 		<div class="about-section-content-wrapper">
 			<div class="about-section-content row">
 				<div class="about-content home-content grid-7">
-					<h1><?php echo $about[0]['post_title'] ?></h1>
+					<h1><?php echo $about[0]['post_title']; ?>TTT</h1>
 					<p><?php echo apply_filters('the_content',$about[0]['post_content']); ?>
 
 					<a href="<?php the_permalink($about[0]['ID']); ?>" class="read-more-link">Read Our Story</a>
