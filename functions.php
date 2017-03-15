@@ -48,7 +48,7 @@ function colelawson_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'onepress-blog-small', 300, 150, true );
 	add_image_size( 'onepress-small', 480, 300, true );
-	add_image_size( 'thumbnail-medium', 640, 400, true );
+	add_image_size( 'thumbnail-medium', 900, 450, true );
 	add_image_size( 'thumbnail-large', 1200, 800, true );
 
 	/*
