@@ -20,9 +20,9 @@ get_header(); ?>
 	</div><!-- .page-header -->
 <?php } ?>
 <div class="container">
-	<div class="row">
+	<div class="row search-page-wrapper">
 		<div class="grid-8">
-			<section id="primary" class="content-area searchphp">
+			<section id="primary" class="content-area search-page-list">
 				<main id="main" class="site-main" role="main">
 				
 				<?php
@@ -43,18 +43,24 @@ get_header(); ?>
 
 				else :
 
-					get_template_part( 'template-parts/content', 'none' );
+					//get_template_part( 'template-parts/content', 'none' );
 
-				endif; ?>
+				endif; 
+
+					wp_link_pages();
+
+					posts_nav_link();
+				?>
+					
 
 				</main><!-- #main -->
 			</section><!-- #primary -->
 		</div>
-		<div class="grid-4">
+		<div class="grid-4 sidebar-wrapper">
 <?php
 			get_sidebar();
 ?>
-		</div>
+		asdasd</div>
 	</div>
 </div>
 <?php

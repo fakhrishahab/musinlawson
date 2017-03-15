@@ -20,13 +20,34 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
+	
+	<div class="content-summary">
+		<div style="display:table-row">
+			<?php if ( has_post_thumbnail() ) { 
+				$link = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail');
+			?>
+				<div class="content-summary-thumbnail" style="background:url(<?php echo $link[0];?>)">
+					<?php //the_post_thumbnail( ); ?>
+				</div>
+			<?php } ?>
+			
+			<div class="content-summary-excerpt">
+				<?php 
+					the_excerpt();
+					echo sprintf( '<a href="%s" class="more-link" rel="bookmark">Read more</a>', esc_url(get_permalink()) );
+				?>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+			</div>
+		</div>
+		
 
-	<footer class="entry-footer">
-		<?php colelawson_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</div>
+	<!-- <div class="entry-summary">
+		<?php //the_excerpt(); ?>
+	</div> --><!-- .entry-summary -->
+
+	<!-- <footer class="entry-footer">
+		<?php //colelawson_entry_footer(); ?>
+	</footer> --><!-- .entry-footer -->
 </article><!-- #post-## -->
 
