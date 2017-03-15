@@ -8,31 +8,27 @@
  */
 
 ?>
-<article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <div class="post-img">
-                    <?php echo the_post_thumbnail('thumbnail-medium');?>
+<section class="header-gap">
+<div class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <section class="page-header">
+                <div class="container">
+                    <div class="page-info">
+                        <div class="page-title">
+                            <h1><?php the_title();?></h1>
+                            <p class="info-date text-s"><i class="fa fa-calendar"></i> <?php colelawson_posted_on(); ?></p>
+                            <a href="#" class="info-author text-s">by <?php the_author(); ?></a>
+                        </div>
+                    </div>
+                    <div class="page-img">
+                         <?php echo the_post_thumbnail('thumbnail-large');?>
+                    </div>
                 </div>
-                <div class="post-content-wrap">
-                    <div class="post-content">
-                         <header class="entry-header">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php colelawson_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_excerpt( sprintf(
+            </section>      
+    <section>
+        <div class="container">
+            <article class="page-article">
+                <?php
+			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'colelawson' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
@@ -43,11 +39,8 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php colelawson_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-                    </div>
-                </div>
-</article><!-- #post-## -->
+            </article>
+        </div>
+    </section>
+</div><!-- #post-## -->
+</section>

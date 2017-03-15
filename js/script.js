@@ -115,6 +115,9 @@ jQuery(function($) {
   };
   
   mediaControl.init();
+  
+
+  
 });
 })
 

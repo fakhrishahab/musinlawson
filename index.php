@@ -19,40 +19,64 @@ get_header(); ?>
                 <div class="row">
                     <div class="grid-9 p20">
                         <main id="main" class="site-main" role="main">
+		<div class="post-wrap">
+	                        <?php if ( have_posts() ) : ?>
+	                            <?php $postCount=0 ?>
+	                            <?php while ( have_posts() ) : the_post(); ?>
+	                                <div class="post" id="post-<?php echo $postCount; ?>" <?php post_class(); ?>>
+	                                    <div class="post-img">
+                    <a href="<?php the_permalink(); ?>">
+                    <?php echo the_post_thumbnail('thumbnail-medium');?>
+                        </a>
+                </div>
+	                                     <div class="post-content-wrap">
+                    <div class="post-content">
+                         <header class="entry-header">
 		<?php
-		if ( have_posts() ) :
+		if ( is_single() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
-			<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;?>
-                            
-                            <?php the_posts_pagination();?>
-
-		<?php else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
+		if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-meta">
+			<?php colelawson_posted_on(); ?>
+		</div><!-- .entry-meta -->
+		<?php
 		endif; ?>
+	</header><!-- .entry-header -->
+	<div class="entry-content">
+		<?php
+			the_excerpt( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'colelawson' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
+
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'colelawson' ),
+				'after'  => '</div>',
+			) );
+		?>
+            <a href="<?php the_permalink(); ?>" class="btn btn-secondary">Read More</a>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<?php colelawson_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+                    </div>
+                </div>
+	                                </div><!-- .post-->
+	                                <?php $postCount++ ?>
+	                            <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
+	                            <?php else : ?>
+	                        <?php endif; ?>
+	                    </div>
 
 		</main><!-- #main -->
                     </div>
-                    <div class="grid-3 p20">
+                    <div class="grid-3 p20 m-hide">
                         <?php get_sidebar();?>
                     </div>
                 </div>
