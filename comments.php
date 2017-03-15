@@ -20,7 +20,9 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<section class="section-white">
+    <div class="container">
+        <div id="comments" class="comments-area">
 
 	<?php
 	// You can start editing here -- including this comment!
@@ -83,3 +85,5 @@ if ( post_password_required() ) {
 	?>
 
 </div><!-- #comments -->
+    </div>
+</section>

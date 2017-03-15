@@ -73,7 +73,7 @@ get_header(); ?>
 	                            <?php else : ?>
 	                        <?php endif; ?>
 	                    </div>
-
+                               <?php the_posts_pagination();?>
 		</main><!-- #main -->
                     </div>
                     <div class="grid-3 p20 m-hide">

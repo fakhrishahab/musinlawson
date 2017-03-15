@@ -15,7 +15,8 @@
                     <div class="page-info">
                         <div class="page-title">
                             <h1><?php the_title();?></h1>
-                            <p class="info-date text-s"><i class="fa fa-calendar"></i> <?php colelawson_posted_on(); ?></p>
+                            <p class="info-date text-s"><i class="fa fa-calendar"></i> Posted on <?php the_time( 'j M y' ); ?></p>
+                            <div class="tags"><?php the_tags( 'Tagged with: #', '&nbsp;#', '<br />' ); ?></div>
                             <a href="#" class="info-author text-s">by <?php the_author(); ?></a>
                         </div>
                     </div>

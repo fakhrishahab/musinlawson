@@ -1,3 +1,4 @@
+@import "../custom/module/variable.scss";
 .main-navigation {
 	clear: both;
 	display: block;
@@ -90,18 +91,76 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
 		overflow: hidden;
 	}
-
+        .nav-previous, .nav-next{
+            font-size:1em;
+            font-weight:600;
+            a{
+                position:relative;
+                &:before, &:after{
+                font-family:$font-icon;
+            }
+                &:hover{
+                 &:before, &:after{
+                color:$c-2;
+            }
+            }
+            &:visited{
+                color:$c-7;
+            }
+            }
+        }
 	.nav-previous {
 		float: left;
 		width: 50%;
+                padding-left:$margin*2;
+                a{
+                    &:before{
+                    display:inline-block;
+                    content:"\f177";
+                    margin-right:10px;
+                    position:absolute;
+                    left:-($margin);
+                    top:0;
+                }
+                }
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
+                padding-right:$margin*2;
+                a{
+                    &:after{
+                    display:inline-block;
+                    content:"\f178";
+                   margin-left:10px;
+                   position:absolute;
+                    right:-($margin);
+                    top:0;
+                }
+                }
 	}
+}
+.comment-respond{
+    border-top:solid 1px $c-border;
+    padding-top:$margin;
+}
+.form-submit{
+    .submit{
+        background:$c-2;
+        border:solid 1px $c-2;
+        line-height:40px;
+        padding:0 $margin;
+        font-size:16px;
+        color:$c-0;
+        &:hover{
+            background:$c-2 - 20;
+        }
+        &:active{
+            background:$c-2 - 40;
+        }
+    }
 }

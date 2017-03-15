@@ -1,6 +1,9 @@
 /*written by dikaseva*/
 @import 'module/variable';
 @import 'module/mixins';
+body{
+    color:#424242;
+}
 .header-gap{
     padding-top:$hh;
 }
@@ -11,6 +14,7 @@
 .post-img{
     img{
         width:100%;
+        @include r;
     }
 }
 .post-content-wrap{
@@ -238,8 +242,12 @@
         }
     }
 }
+p.info-date{
+    margin:0;
+}
 .info-date{
     padding:$margin-m 0;
+    color:$c-7;
     i{
         margin-right:$margin-m;
     }
@@ -252,15 +260,11 @@
     a{
         display:inline-block;
         color:$c-6;
-        border:solid 1px $c-6;
-        margin:4px;
-        padding:5px 10px;
         text-decoration:none;
         @include r;
         &:hover{
             cursor:pointer;
-            color:$c-1;
-            border:solid 1px $c-1;
+            color:$c-2;
         }
     }
 }
@@ -309,10 +313,12 @@ article{
     figure{
         margin:$margin 0;
         figcaption{
+            text-align:left!important;
             font-size:13px;
             padding-left:50px;
             margin:$margin-m 0;
             position:relative;
+            color:$c-7;
             &:before{
                 width:40px;
                 height:1px;
@@ -328,6 +334,9 @@ article{
 .article,
 .page-article{
     padding:$margin;
+    p{
+        line-height:1.75em;
+    }
     blockquote{
         font-size:1.3em;
         margin-top:$margin;
@@ -337,13 +346,12 @@ article{
         position:relative;
         font-family:$font__poly;
         &:before{
-            width:100px;
-            height:2px;
-            content:'';
+            font-family:$font-icon;
+            content:"\f10e";
             position:absolute;
-            left:0;
-            top:-5px;
-            background:$c-border;
+            left:-30px;
+            top:0;
+            color:$c-8;
         }
     } 
     ul { 
@@ -478,4 +486,48 @@ address {
         margin-left:-10%;
         width:100%;
     } 
+}
+.section-grey{
+    background:$c-9;
+    padding:$margin*2 $margin;
+}
+.section-white{
+    background:$c-0;
+    padding:$margin*2 $margin;
+}
+.comments-title{
+    font-size:(24/16)+em;
+}
+
+.page-nav{
+    background:$c-9;
+    padding:$margin 0;
+    overflow:auto;
+    p{
+        color:$c-7;
+    }
+}
+.comment-form{
+    label{
+        display:block;
+        font-weight:600;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=url]{
+        width:100%;
+        line-height:40px;
+        padding:0 $margin-m;
+        @include r;
+        &:focus{
+            border:solid 1px $c-2;
+        }
+    }
+    textarea{
+        padding:$margin-m $margin-m;
+        @include r;
+        &:focus{
+            border:solid 1px $c-2;
+        }
+    }
 }
