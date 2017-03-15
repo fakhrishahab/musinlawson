@@ -8,41 +8,54 @@
  */
 
 get_header(); ?>
+<?php if ( have_posts() ) { ?>
+				
+	<div class="content-header">
+		<div class="container header-gap">
+			<h2>Search Results for:</h2>
+			<h1>"<?php echo get_search_query();?>"</h1>
+			
+		</div>
+		
+	</div><!-- .page-header -->
+<?php } ?>
+<div class="container">
+	<div class="row">
+		<div class="grid-8">
+			<section id="primary" class="content-area searchphp">
+				<main id="main" class="site-main" role="main">
+				
+				<?php
+				if ( have_posts() ) :
+					/* Start the Loop */
+					while ( have_posts() ) : the_post();
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-search.php and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', 'search' );
 
-		<?php
-		if ( have_posts() ) : ?>
+					endwhile;
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'colelawson' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+					the_posts_navigation();
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				else :
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+					get_template_part( 'template-parts/content', 'none' );
 
-			endwhile;
+				endif; ?>
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
+				</main><!-- #main -->
+			</section><!-- #primary -->
+		</div>
+		<div class="grid-4">
 <?php
-get_sidebar();
+			get_sidebar();
+?>
+		</div>
+	</div>
+</div>
+<?php
 get_footer();

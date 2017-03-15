@@ -917,7 +917,8 @@ div [class*="grid-gap"] {
   z-index: 9898;
   width: 100%;
   background: #002664;
-  height: 140px; }
+  height: 140px;
+  top: 0; }
   .site-header.is-scrolled {
     background: #0073cf;
     transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s;
@@ -1706,6 +1707,21 @@ section.engaging-section {
       display: block;
       border-bottom: 1px solid #dddddd;
       font-weight: 600; }
+
+.content-header {
+  background: #f1f1f1;
+  width: 100%;
+  margin-top: 60px; }
+  .content-header h2 {
+    font-size: 18px; }
+  .content-header h1 {
+    font-size: 45px;
+    font-family: "Source Sans Pro", sans-serif;
+    line-height: 60px;
+    font-weight: 800;
+    color: #002664;
+    padding-top: 20px;
+    padding-bottom: 50px; }
 
 .p10 {
   padding: 10px; }

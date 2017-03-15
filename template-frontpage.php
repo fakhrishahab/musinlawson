@@ -9,7 +9,7 @@ get_header();
 ?>
 
 
-<div id="top-content" class="site-content">
+<div id="content" class="site-content">
 
 	<?php 
 	if ( is_front_page() && !is_paged() && is_dynamic_sidebar('headerwidget') ) {
@@ -17,11 +17,11 @@ get_header();
 	}
 	?>
 
-	<div class="page-header">
+	<!-- <div class="page-header">
 		<div class="container">
 			<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</div>
-	</div>
+	</div> -->
 
 </div><!-- #content -->
 

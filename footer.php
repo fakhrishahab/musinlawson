@@ -27,7 +27,7 @@ $footer_content = get_theme_mod('colelawson_footer_copyright');
 				<?php echo esc_html__($footer_content); ?>
 			</div>
 			
-			<a href="#top-content">
+			<a href="#body">
 				<div class="btn-to-top">
 					<i class="fa fa-angle-up"></i>
 				</div>

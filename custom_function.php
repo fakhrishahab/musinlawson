@@ -145,7 +145,7 @@ function cd_meta_box_save($post_id){
 
 function custom_search_form() {
 ?>
-	<form method="get" class="custom_search_form" action="<?php bloginfo('home'); ?>/">
+	<form method="get" class="custom_search_form" action="<?php echo get_site_url(); ?>/">
 		<div class="custom_search_wrapper">
 			<input class="custom_search_text" type="text" placeholder="Search" name="s" id="s" />
 			<button type="submit"><i class="fa fa-search"></i></button>
