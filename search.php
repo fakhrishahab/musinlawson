@@ -39,7 +39,8 @@ get_header(); ?>
 
 					endwhile;
 
-					the_posts_navigation();
+					// the_posts_navigation();
+					the_posts_pagination();
 
 				else :
 
@@ -47,7 +48,6 @@ get_header(); ?>
 
 				endif; 
 
-					wp_link_pages();
 				?>
 					
 

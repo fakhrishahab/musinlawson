@@ -8,44 +8,60 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area archivephp">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header>
-
+<?php if ( have_posts() ) { ?>
+				
+	<div class="content-header">
+		<div class="container header-gap">
+			<h2>Archive</h2>
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				the_archive_title( '<h1>', '</h1>' );
+				// the_archive_description( '<h1>', '</h1>' );			
+			?>
+		</div>
+		
+	</div><!-- .page-header -->
+<?php } ?>
+<div class="container">
+	<div class="row search-page-wrapper">
+		<div class="grid-8">
+			<section id="primary" class="content-area search-page-list">
+				<main id="main" class="site-main" role="main">
+				
+				<?php
+				if ( have_posts() ) :
+					/* Start the Loop */
+					while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-search.php and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', 'search' );
 
-			endwhile;
+					endwhile;
 
-			the_posts_navigation();
+					// the_posts_navigation();
+					the_posts_pagination();
 
-		else :
+				else :
 
-			get_template_part( 'template-parts/content', 'search' );
+					get_template_part( 'template-parts/content', 'search' );
 
-		endif; ?>
+				endif; 
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				?>
+					
 
+				</main><!-- #main -->
+			</section><!-- #primary -->
+		</div>
+		<div class="grid-4 sidebar-wrapper">
 <?php
-get_sidebar();
+			get_sidebar();
+?>
+		</div>
+	</div>
+</div>
+<?php
 get_footer();

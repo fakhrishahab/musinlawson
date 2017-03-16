@@ -12,6 +12,20 @@ function(){
     console.log('google-loader has been loaded, but not the maps-API');
 });
 
+// var lang = ['id', 'en'];
+// function checkCookie(name) {
+//     var bahasa = getCookie(name);
+//     if (bahasa != "") {
+//     	console.log('do nothing for cookies');
+//         // alert("Welcome again " + username);
+//     } else {
+//     	console.log('create cookies');
+// 		setCookie('bahasa', lang[1]);
+//     }
+// }
+// checkCookie('bahasa');
+// setCookie('bahasa', lang[1]);
+
 jQuery(document).ready(function($){
 	$('.colelawson-menu > .menu-item-has-children').each(function(key){
 		$(this).append($('<i>', {
@@ -73,13 +87,29 @@ jQuery(document).ready(function($){
 		$(this).siblings('ul').toggle();
 	});
 
-	// $('a','.lang-item').on('click', function(){
-	// 	var attr = $(this).attr('lang');
-	// 	var lang = attr.split('-')[0];
-	// 	console.log(lang);
-	// 	// document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
-	// 	document.cookie="bahasa="+lang+";path=/;";
-	// });
+	$('a','.lang-item').on('click', function(e){
+		var attr = $(this).attr('lang');
+		var lang = attr.split('-')[0];
+		var self = $(this);
+		alert(lang);
+		// $.removeCookie('lang');
+		$.cookie('lang', lang);
+		// console.log($.cookie('lang'));
+		setTimeout(function(){
+			window.location.href=self.attr('href');
+		}, 2000);
+		// console.log($.cookie('lang'));
+		e.preventDefault();
+		e.stopPropagation();
+		// window.location.href=$(this).attr('href');
+		// alert(lang);
+		// // document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
+		// setCookie('bahasa', lang);
+		// $.removeCookie('test');
+		// $.cookie('test', lang );
+		// document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
+		// document.cookie="bahasa="+lang+";path=/;";
+	});
 
 	$('body').on('click', function(){
 		$('ul', '.languagewidget').hide();
@@ -95,7 +125,51 @@ jQuery(document).ready(function($){
 			initMap();
 			// setFooterEnquiryHeight();
 		}
+	});
+
+	// if($.cookie('pll_language')){
+	// 	$('*[data-lang=="'+$.cookie('pll_language')+'""]').show();
+	// 	$('*[data-lang=="id"]').hide();
+	// }else{
+	// 	$('*[data-lang=="en"]').hide();
+	// 	$('*[data-lang=="id"]').show();
+	// }
+	// $('*[data-lang==en]').hide();
+	$('*[data-lang]').each(function(key, value){
+		// if($(this)[key])
+		// if($.cookie('pll_language')){
+		// 	$(this).attr('data-lang')
+		// }
+		// console.log(value)
 	})
+
+	// $('*[detect-language]').each(function(){
+	// 	var self = $(this);
+	// 	$(this).attr('data-lang', function(index, value){
+	// 		if($.cookie('pll_language') && $(self[index]).attr('data-lang') == $.cookie('pll_language')){
+	// 			$(self[index]).show();
+	// 		}else{
+	// 			console.log$(self[index]).attr('data-lang')
+	// 			// conso
+	// 			// $(self[index]).hide();
+				
+	// 			// console.log(value)
+	// 		}
+			
+	// 		// console.log(self[index])
+	// 	})
+	// 	// if($.cookie('pll_language')){
+	// 	// 	$(this).
+	// 	// }
+	// 	// console.log($(this).attr('data-lang', 'en').html());
+	// // 	// console.log('cookies',$.cookie('lang'))
+	// // 	if($(this).data('lang') != $.cookie('pll_language')){
+	// // 		$(this).hide();
+	// // 	}
+
+	// // 	console.log($(this).data('lang', 'id'))
+	// // 	// console.log($(this).html());
+	// });
 
 	setDescriptionHeight();
 	arrangeAboutSection();
@@ -178,6 +252,28 @@ function initMap() {
 	});
 }
 
+// function setCookie(cname, cvalue, exdays) {
+//     var d = new Date();
+//     d.setTime(d.getTime() + (exdays*24*60*60*1000));
+//     var expires = "expires="+ d.toUTCString();
+//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+// }
+
+// function getCookie(cname) {
+//     var name = cname + "=";
+//     var decodedCookie = decodeURIComponent(document.cookie);
+//     var ca = decodedCookie.split(';');
+//     for(var i = 0; i <ca.length; i++) {
+//         var c = ca[i];
+//         while (c.charAt(0) == ' ') {
+//             c = c.substring(1);
+//         }
+//         if (c.indexOf(name) == 0) {
+//             return c.substring(name.length, c.length);
+//         }
+//     }
+//     return "";
+// }
 
 
 

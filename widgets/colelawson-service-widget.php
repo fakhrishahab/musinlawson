@@ -7,8 +7,6 @@ Author URI: http://fakhrisyahab.com
 License: GPLv2
 */
 ?>
-
-
 <?php
 add_action( 'widgets_init', 'register_colelawson_service_widget' );
 

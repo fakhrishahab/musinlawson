@@ -1284,7 +1284,9 @@ section.about-section .about-section-content-wrapper {
     margin-bottom: 20px;
     height: 7px;
     background: #FFF;
-    position: relative; }
+    position: relative;
+    content: '';
+    display: block; }
 
 .section-services {
   background: #f5f5f5; }
@@ -1537,7 +1539,9 @@ section.engaging-section {
       margin-bottom: 20px;
       height: 7px;
       background: #FFF;
-      position: relative; }
+      position: relative;
+      content: '';
+      display: block; }
 
 .news-section .section-title a {
   position: absolute;
