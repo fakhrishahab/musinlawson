@@ -23,7 +23,10 @@
 	border-right: 1px solid $c-8;
 }
 
-
+.border-left-c8{
+	border-left: 1px solid $c-8;
+	margin-left: -1px;
+}
 // .site-header{
 // 	background: transparent;
 // 	padding: 10px;

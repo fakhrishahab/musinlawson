@@ -1,5 +1,5 @@
 var image_field;
-
+console.log('test')
 // text.replace(/src="(.*?)\"/g, function () {
 //     //arguments[0] is the entire match
 //     // matches.push(arguments[1]);

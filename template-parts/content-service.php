@@ -41,7 +41,7 @@
 				<?php sprintf(the_content());?>
 			</div>
 		</div>
-		<div class="grid-3">
+		<div class="grid-3 border-left-c8">
 			<ul class="content-sidebar-menu">
 				<li class="title">Our Services</li>
 				<?php

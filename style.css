@@ -1703,7 +1703,7 @@ section.engaging-section {
 .jumbotron-header {
   width: 100%;
   height: 400px;
-  margin-top: 110px;
+  margin-top: 80px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1779,6 +1779,15 @@ section.engaging-section {
       display: block;
       border-bottom: 1px solid #dddddd;
       font-weight: 600; }
+  .content-sidebar-menu.has-thumbnail .content-summary-thumbnail {
+    height: 200px;
+    background-position: center !important;
+    background-size: cover !important; }
+  .content-sidebar-menu.has-thumbnail a {
+    color: #000;
+    border-bottom: none; }
+  .content-sidebar-menu.has-thumbnail span {
+    color: #777777; }
 
 .content-header {
   background: #f1f1f1;
@@ -1854,6 +1863,10 @@ section.engaging-section {
 
 .border-right-c8 {
   border-right: 1px solid #dddddd; }
+
+.border-left-c8 {
+  border-left: 1px solid #dddddd;
+  margin-left: -1px; }
 
 /*written by dikaseva*/
 body {

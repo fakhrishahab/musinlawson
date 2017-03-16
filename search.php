@@ -48,8 +48,6 @@ get_header(); ?>
 				endif; 
 
 					wp_link_pages();
-
-					posts_nav_link();
 				?>
 					
 

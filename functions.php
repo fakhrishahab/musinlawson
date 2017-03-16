@@ -146,6 +146,11 @@ function colelawson_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'colelawson_scripts' );
 
+function hrw_enqueues(){
+	wp_enqueue_script('hrw', get_template_directory_uri() . '/js/script.js', null, $version, true);
+}
+add_action('admin_enqueue_scripts', 'hrw_enqueues');
+
 /**
  * Implement the Custom Header feature.
  */
