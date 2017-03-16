@@ -2,6 +2,8 @@
 $hide_service_section = get_theme_mod('colelawson_hide_services_section');
 $title = get_theme_mod('colelawson_service_title');
 $description = get_theme_mod('colelawson_service_description');
+$title_id = get_theme_mod('colelawson_service_title_id');
+$description_id = get_theme_mod('colelawson_service_description_id');
 // $array = get_theme_mod('colelawson_service_image');
 
 $args = array(
@@ -27,8 +29,10 @@ if(!$hide_service_section){
 	<section class="section-services" id="services-section">
 		<div class="container">
 			<div class="section-title">
-				<h1><?php echo $title; ?></h1>
-				<p> <?php echo esc_textarea($description); ?> </p>
+				<h1 detect-language lang="en"><?php echo $title; ?></h1>
+				<p detect-language lang="en"> <?php echo esc_textarea($description); ?> </p>
+				<!-- <h1 detect-language lang="id"><?php //echo $title_id; ?></h1>
+				<p detect-language lang="id"> <?php //echo esc_textarea($description_id); ?> </p> -->
 			</div>
 
 			<div class="service-wrapper">
