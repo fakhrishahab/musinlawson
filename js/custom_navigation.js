@@ -87,29 +87,29 @@ jQuery(document).ready(function($){
 		$(this).siblings('ul').toggle();
 	});
 
-	$('a','.lang-item').on('click', function(e){
-		var attr = $(this).attr('lang');
-		var lang = attr.split('-')[0];
-		var self = $(this);
-		alert(lang);
-		// $.removeCookie('lang');
-		$.cookie('lang', lang);
-		// console.log($.cookie('lang'));
-		setTimeout(function(){
-			window.location.href=self.attr('href');
-		}, 2000);
-		// console.log($.cookie('lang'));
-		e.preventDefault();
-		e.stopPropagation();
-		// window.location.href=$(this).attr('href');
-		// alert(lang);
-		// // document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
-		// setCookie('bahasa', lang);
-		// $.removeCookie('test');
-		// $.cookie('test', lang );
-		// document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
-		// document.cookie="bahasa="+lang+";path=/;";
-	});
+	// $('a','.lang-item').on('click', function(e){
+	// 	var attr = $(this).attr('lang');
+	// 	var lang = attr.split('-')[0];
+	// 	var self = $(this);
+	// 	alert(lang);
+	// 	// $.removeCookie('lang');
+	// 	$.cookie('lang', lang);
+	// 	// console.log($.cookie('lang'));
+	// 	setTimeout(function(){
+	// 		window.location.href=self.attr('href');
+	// 	}, 2000);
+	// 	// console.log($.cookie('lang'));
+	// 	e.preventDefault();
+	// 	e.stopPropagation();
+	// 	// window.location.href=$(this).attr('href');
+	// 	// alert(lang);
+	// 	// // document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
+	// 	// setCookie('bahasa', lang);
+	// 	// $.removeCookie('test');
+	// 	// $.cookie('test', lang );
+	// 	// document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
+	// 	// document.cookie="bahasa="+lang+";path=/;";
+	// });
 
 	$('body').on('click', function(){
 		$('ul', '.languagewidget').hide();

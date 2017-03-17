@@ -1181,8 +1181,10 @@ ul > li > .sub-menu {
       border-top: 1px solid #777777;
       top: 0; }
   .collapse-menu .collapse-search-form {
-    background: #777777;
-    padding: 20px; }
+    background: #dddddd;
+    padding: 20px;
+    float: left;
+    width: 100%; }
   .collapse-menu .custom_search_wrapper {
     float: none;
     margin-top: 0;

@@ -274,8 +274,10 @@ ul>li>.sub-menu{
 	}
 
 	.collapse-search-form{
-		background: $c-4;
+		background: $c-8;
 		padding: 20px;
+		float: left;
+		width: 100%;
 	}
 	.custom_search_wrapper{
 		float:none;

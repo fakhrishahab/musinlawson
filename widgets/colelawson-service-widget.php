@@ -16,9 +16,6 @@ function register_colelawson_service_widget() {
  
 }
 
-?>
-
-<?php
 function tutsplus_check_for_page_tree() {
  
     //start by checking if we're on a page
@@ -43,9 +40,7 @@ function tutsplus_check_for_page_tree() {
     }
  
 }
-?>
 
-<?php
 class Colelawson_Service_Widget extends WP_Widget{
 	function __construct(){
 		parent::__construct(

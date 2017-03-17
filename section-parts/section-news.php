@@ -23,7 +23,7 @@ $category_id = get_cat_ID($category_name);
 		<div class="section-title">
 			<h1>News</h1>
 			<p>Check here for the latest updates from Musin & Lawson Communications.</p>
-			<a href="<?php echo get_category_link($category_id);?>">SEE ALL</a>
+			<a href="<?php echo get_permalink( get_option('page_for_posts' ) );?>">SEE ALL</a>
 		</div>
 
 		<div class="news-wrapper">
