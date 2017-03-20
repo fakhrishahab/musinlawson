@@ -66,10 +66,10 @@ jQuery(document).ready(function($){
 		grabCursor: true,
 	    nextButton: '.btn-next',
 	    prevButton: '.btn-prev',
-	    slidesOffsetBefore : 30,
-	    slidesOffsetAfter : 30,
-	    spaceBetween: 20,
-	    slidesPerGroup: 2,
+	    // slidesOffsetBefore : 30,
+	    // slidesOffsetAfter : 30,
+	    spaceBetween: 10,
+	    // slidesPerGroup: 2,
 	});
 
 	var langImg = $('li.current-lang').find('img').attr('src');

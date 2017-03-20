@@ -1644,7 +1644,8 @@ section.engaging-section {
         -o-transition: display .5s ease;
         transition: display .5s ease; }
     .location-wrapper .location-tabs .location-info {
-      padding: 30px; }
+      padding: 30px;
+      min-height: 220px; }
     .location-wrapper .location-tabs .location-map {
       width: 100%;
       height: 250px; }
