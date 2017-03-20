@@ -157,5 +157,37 @@ function custom_search_form() {
 }
 add_action('custom_search_form', 'custom_search_form');
 
+?>
 
+<?php
+function error_page_background( $wp_customize ) {
+    $wp_customize->add_section( 'error_new_section_background' , array(
+   		'title'      => __('404 Background', 'colelawson'),
+   		'priority'   => 103,
+	) );
+
+        // background
+		$wp_customize->add_setting(
+	        'error_background',
+	        array(
+	        	'sanitize_callback' => 'esc_url'
+	        )
+	    );
+                    // homepage background
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'error_background',
+				array(
+					'label'      => __('Error background', 'colelawson'),
+					'section'    => 'error_new_section_background',
+					'settings'   => 'error_background',
+					'priority'	 => 61
+				)
+			)
+		);
+}
+?>
+<?php
+add_action( 'customize_register', 'error_page_background' );
 ?>
