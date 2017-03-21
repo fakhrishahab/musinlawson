@@ -758,6 +758,23 @@ function colelawson_customize_register( $wp_customize ) {
 		    		)
 		    	)
 		    );
+
+		    // Engaging Link
+			$wp_customize->add_setting( 'colelawson_engaging_link',
+				array(
+					'sanitize_callback' => 'sanitize_text_field',
+					// 'default'           => esc_html__( 'Link', 'colelawson' ),
+					'transport'			=> 'refresh',
+				)
+			);
+			$wp_customize->add_control( 'colelawson_engaging_link',
+				array(
+					'label'       => esc_html__('Link', 'colelawson'),
+					'section'     => 'colelawson_engaging_section',
+					'description' => '',
+					'type' => 'dropdown-pages'
+				)
+			);
 	
 		/* Contact Location Settings
 		----------------------------------------------------------------------*/

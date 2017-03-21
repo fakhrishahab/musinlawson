@@ -10,7 +10,7 @@
 	// $about_title = get_theme_mod('colelawson_about_title'.$lang);
 	// $about_description = get_theme_mod('colelawson_about_description'.$lang);
 	// $about_content = get_theme_mod('colelawson_about_content'.$lang);
-	// $about_link = get_theme_mod('colelawson_about_link');
+	$about_link = get_theme_mod('colelawson_about_link');
 
 	$args = array(
 		'numberposts' => 1,
@@ -38,8 +38,8 @@ $about = wp_get_recent_posts($args, ARRAY_A);
 				<div class="about-content home-content grid-7">
 					<h1><?php echo $about[0]['post_title']; ?></h1>
 					<p><?php echo apply_filters('the_content',$about[0]['post_content']); ?>
-
-					<a href="<?php the_permalink($about[0]['ID']); ?>" class="read-more-link">Read Our Story</a>
+					
+					<a href="<?php the_permalink($about_link); ?>" class="read-more-link">Read Our Story</a>
 				</div>
 
 				<div class="about-description grid-5 outer">

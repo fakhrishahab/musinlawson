@@ -10,7 +10,7 @@
 	// $about_title = get_theme_mod('colelawson_about_title'.$lang);
 	// $about_description = get_theme_mod('colelawson_about_description'.$lang);
 	// $about_content = get_theme_mod('colelawson_about_content'.$lang);
-	// $about_link = get_theme_mod('colelawson_about_link');
+	$engaging_link = get_theme_mod('colelawson_engaging_link');
 
 	$args = array(
 		'numberposts' => 1,
@@ -39,7 +39,7 @@ $engaging = wp_get_recent_posts($args, ARRAY_A);
 					<h1><?php echo $engaging[0]['post_title'] ?></h1>
 					<p><?php echo apply_filters('the_content',$engaging[0]['post_content']); ?>
 
-					<a href="<?php the_permalink($engaging[0]['ID']); ?>" class="read-more-link">Read Our Story</a>
+					<a href="<?php the_permalink($engaging_link); ?>" class="read-more-link">Read Our Story</a>
 				</div>
 
 				<div class="engaging-description grid-5 outer">

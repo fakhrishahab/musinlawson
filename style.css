@@ -1774,7 +1774,8 @@ section.engaging-section {
   margin: 0;
   padding: 20px 0 20px 20px; }
   .content-sidebar-menu li {
-    display: block; }
+    display: block;
+    margin-bottom: 30px; }
     .content-sidebar-menu li.title {
       font-weight: bold;
       font-size: 22px;
@@ -1786,6 +1787,8 @@ section.engaging-section {
       display: block;
       border-bottom: 1px solid #dddddd;
       font-weight: 600; }
+  .content-sidebar-menu .li:not([class^='title']) {
+    margin-bottom: 30px; }
   .content-sidebar-menu.has-thumbnail .content-summary-thumbnail {
     height: 200px;
     background-position: center !important;

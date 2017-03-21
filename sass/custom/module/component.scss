@@ -1160,6 +1160,7 @@ section.engaging-section{
 
 	li{
 		display: block;
+		margin-bottom: 30px;
 
 		&.title{
 			font-weight: bold;
@@ -1175,6 +1176,10 @@ section.engaging-section{
 			border-bottom: 1px solid $c-8;
 			font-weight: 600;
 		}
+	}
+
+	.li:not([class^='title']){
+		margin-bottom: 30px;
 	}
 
 	&.has-thumbnail{
