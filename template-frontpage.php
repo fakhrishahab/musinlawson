@@ -16,7 +16,7 @@ get_header();
 		dynamic_sidebar('headerwidget');
 	}
 	?>
-
+	<div class="mouse"></div>
 	<!-- <div class="page-header">
 		<div class="container">
 			<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>

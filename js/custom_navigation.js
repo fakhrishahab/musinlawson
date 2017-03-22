@@ -180,7 +180,14 @@ jQuery(document).ready(function($){
 			jQuery('input#nf-field-13').val('fakhrishahab@gmail.com');
 		}
 		
-	})
+	});
+
+	jQuery('.mouse').on('click', function(){
+		var body = jQuery('html, body');
+		var about = jQuery('#about-section').offset().top;
+		var header = jQuery('.site-header').outerHeight();
+		body.animate({scrollTop: about-header}, '500');
+	});
 	
 
 	setDescriptionHeight();
