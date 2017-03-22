@@ -12,6 +12,7 @@ function(){
     console.log('google-loader has been loaded, but not the maps-API');
 });
 
+
 // var lang = ['id', 'en'];
 // function checkCookie(name) {
 //     var bahasa = getCookie(name);
@@ -170,6 +171,17 @@ jQuery(document).ready(function($){
 	// // 	console.log($(this).data('lang', 'id'))
 	// // 	// console.log($(this).html());
 	// });
+	jQuery(document).on('change', 'select.ninja-forms-field', function(){
+		var value = jQuery(this).html();
+		console.log(this.value);
+		if(value=='indonesia'){
+			jQuery('input#nf-field-13').val('fakhri1804@gmail.com');
+		}else{
+			jQuery('input#nf-field-13').val('fakhrishahab@gmail.com');
+		}
+		
+	})
+	
 
 	setDescriptionHeight();
 	arrangeAboutSection();

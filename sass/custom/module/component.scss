@@ -745,7 +745,7 @@ section.engaging-section{
 				font-weight: 400;
 			}
 
-			a{
+			a.read-more-link{
 				&:before,&:after{
 					content: none;
 				}
@@ -1158,9 +1158,13 @@ section.engaging-section{
 	margin:0;
 	padding: 20px 0 20px 20px;
 
+	&.has-thumbnail{
+		li{
+			margin-bottom: 30px;
+		}
+	}
 	li{
 		display: block;
-		margin-bottom: 30px;
 
 		&.title{
 			font-weight: bold;
@@ -1290,5 +1294,21 @@ section.engaging-section{
 
 	.widget-title{
 		font-weight: 800;
+	}
+}
+
+.entry-content,
+.single-content{
+	.nf-form-cont{
+		padding: 20px;
+		background: $c-9;
+		max-width: 50%;
+
+		select{
+			height: 32px;
+		}
+		input[type=button]{
+			background: $c-1;
+		}
 	}
 }
