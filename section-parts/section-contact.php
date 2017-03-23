@@ -7,8 +7,10 @@ $email_aus = get_theme_mod('colelawson_email_australia');
 ?>
 
 <script>
-	var email_id = <?php echo $email_id;?>;
-	var email_aus = <?php echo $email_aus;?>;
+	var email_id = '<?php echo $email_id;?>';
+	var email_aus = '<?php echo $email_aus;?>';
+	
+	jQuery('.email-dest').val(email_id);
 </script>
 <section class="contact-section" id="contact-section">
 	<div class="container row">

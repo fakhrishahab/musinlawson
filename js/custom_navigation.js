@@ -12,6 +12,7 @@ function(){
     console.log('google-loader has been loaded, but not the maps-API');
 });
 
+
 // var lang = ['id', 'en'];
 // function checkCookie(name) {
 //     var bahasa = getCookie(name);
@@ -170,6 +171,24 @@ jQuery(document).ready(function($){
 	// // 	console.log($(this).data('lang', 'id'))
 	// // 	// console.log($(this).html());
 	// });
+	jQuery(document).on('change', 'select.ninja-forms-field', function(){
+		var value = jQuery(this).html();
+		console.log(this.value);
+		if(value=='indonesia'){
+			jQuery('.email_dest').val(email_id);
+		}else{
+			jQuery('.email_dest').val(email_aus);
+		}
+		
+	});
+
+	jQuery('.mouse').on('click', function(){
+		var body = jQuery('html, body');
+		var about = jQuery('#about-section').offset().top;
+		var header = jQuery('.site-header').outerHeight();
+		body.animate({scrollTop: about-header}, '500');
+	});
+	
 
 	setDescriptionHeight();
 	arrangeAboutSection();

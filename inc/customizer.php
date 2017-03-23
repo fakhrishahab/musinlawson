@@ -835,6 +835,10 @@ function colelawson_customize_register( $wp_customize ) {
                                 'title' => esc_html__('Longitude', 'colelawson'),
                                 'type'  =>'text',
                             ),
+                            'email'  => array(
+                                'title' => esc_html__('Email Address', 'colelawson'),
+                                'type'  =>'text',
+                            ),
                         ),
 					)
 				)
