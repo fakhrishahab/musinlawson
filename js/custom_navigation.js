@@ -190,7 +190,7 @@ jQuery(document).ready(function($){
 	});
 	
 
-	setDescriptionHeight();
+	// setDescriptionHeight();
 	arrangeAboutSection();
 	setSpecialitiesRightSectionHeight();
 	// setFooterEnquiryHeight();
@@ -198,7 +198,7 @@ jQuery(document).ready(function($){
 });
 
 jQuery(window).resize(function(){
-	setDescriptionHeight();
+	// setDescriptionHeight();
 	arrangeAboutSection();
 	setSpecialitiesRightSectionHeight();
 	// setFooterEnquiryHeight();

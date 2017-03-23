@@ -34,7 +34,7 @@ $about = wp_get_recent_posts($args, ARRAY_A);
 <section class="about-section" id="about-section">
 	<div class="container">
 		<div class="about-section-content-wrapper">
-			<div class="about-section-content row">
+			<div class="about-section-content">
 				<div class="about-content home-content grid-7">
 					<h1><?php echo $about[0]['post_title']; ?></h1>
 					<p><?php echo apply_filters('the_content',$about[0]['post_content']); ?>
@@ -42,8 +42,8 @@ $about = wp_get_recent_posts($args, ARRAY_A);
 					<a href="<?php the_permalink($about_link); ?>" class="read-more-link">Read Our Story</a>
 				</div>
 
-				<div class="about-description grid-5 outer">
-					<div class="about-description-content home-description-content inner">
+				<div class="about-description grid-5">
+					<div class="about-description-content home-description-content">
 						<?php echo apply_filters('the_content', get_post_meta($about[0]['ID'], 'my_meta_box_text', true)); ?>	
 					</div>
 				</div>

@@ -84,7 +84,7 @@ if(!$hide_specialities_section){
 				</div>
 				<div class="grid-5 specialities-right">
 					<div class="specialities-title">
-						<?php echo esc_html($description); ?>
+						<?php echo htmlspecialchars_decode($description); ?>
 					</div>
 					<div class="specialities-slider-image-wrapper">
 						<div class="slider-image-title">

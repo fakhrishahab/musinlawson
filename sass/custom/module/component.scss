@@ -369,17 +369,21 @@ section.about-section{
 
 		.about-section-content{
 			padding: 0!important;
+			display: table;
 			overflow: hidden;
 		}
 
 		.about-content{
 			padding: 0 50px 50px 0px;
-			font-weight: 600;
+			display: table-cell;
+			width: 100%!important;
+			// font-weight: 600;
 			// padding-bottom: 50px;
 			// min-height: 330px;
 			h1{
 				text-align: left;
 				font-weight: 200;
+				word-spacing: -10px;
 			}
 
 			a{
@@ -408,6 +412,9 @@ section.about-section{
 			font-weight: 300;
 			// overflow: hidden;
 			position: relative;
+			display: table-cell;
+			vertical-align: middle;
+			float: none!important;
 
 			p{
 				font-family: $font__poly;
@@ -705,8 +712,13 @@ section.about-section{
 
 		.swiper-wrapper{
 			img{
-				height: 70px;
+				max-height: 75px;
 			}
+		}
+
+		.swiper-slide{
+			text-align: center;
+			max-height: 75px;
 		}
 	}
 }
@@ -727,11 +739,14 @@ section.engaging-section{
 		.engaging-section-content{
 			padding: 0!important;
 			overflow: hidden;
+			display: table;
 		}
 
 		.engaging-content{
 			padding: 0 50px 50px 0px;
 			font-weight: 600;
+			display: table-cell;
+			width: 100%!important;
 			// padding-bottom: 50px;
 			// min-height: 330px;
 			h1{
@@ -771,6 +786,9 @@ section.engaging-section{
 			font-weight: 300;
 			// overflow: hidden;
 			position: relative;
+			display: table-cell;
+			float:none!important;
+			vertical-align: middle;
 
 			p{
 				font-family: $font__poly;
@@ -1310,6 +1328,19 @@ section.engaging-section{
 		input[type=button]{
 			background: $c-1;
 		}
+	}
+}
+
+a.custom-btn{
+	padding: 10px 15px;
+	border:1px solid $c-1;
+	color: $c-1;
+	text-transform: uppercase;
+	background: #FFF;
+
+	&:hover{
+		background: $c-1;
+		color: $white;
 	}
 }
 

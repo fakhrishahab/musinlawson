@@ -1234,13 +1234,16 @@ section.about-section .about-section-content-wrapper {
   position: relative; }
   section.about-section .about-section-content-wrapper .about-section-content {
     padding: 0 !important;
+    display: table;
     overflow: hidden; }
   section.about-section .about-section-content-wrapper .about-content {
     padding: 0 50px 50px 0px;
-    font-weight: 600; }
+    display: table-cell;
+    width: 100% !important; }
     section.about-section .about-section-content-wrapper .about-content h1 {
       text-align: left;
-      font-weight: 200; }
+      font-weight: 200;
+      word-spacing: -10px; }
     section.about-section .about-section-content-wrapper .about-content a {
       float: left;
       border: 1px solid #777777;
@@ -1263,7 +1266,10 @@ section.about-section .about-section-content-wrapper {
     color: #FFF;
     font-style: italic;
     font-weight: 300;
-    position: relative; }
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    float: none !important; }
     section.about-section .about-section-content-wrapper .about-description p {
       font-family: "Poly";
       font-size: 30px;
@@ -1485,7 +1491,10 @@ section.about-section .about-section-content-wrapper {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
         /* IE6-9 fallback on horizontal gradient */ }
     .specialities-right .specialities-slider-image-wrapper .swiper-wrapper img {
-      height: 70px; }
+      max-height: 75px; }
+    .specialities-right .specialities-slider-image-wrapper .swiper-slide {
+      text-align: center;
+      max-height: 75px; }
 
 section.engaging-section {
   background: #002664; }
@@ -1495,10 +1504,13 @@ section.engaging-section {
     position: relative; }
     section.engaging-section .engaging-section-content-wrapper .engaging-section-content {
       padding: 0 !important;
-      overflow: hidden; }
+      overflow: hidden;
+      display: table; }
     section.engaging-section .engaging-section-content-wrapper .engaging-content {
       padding: 0 50px 50px 0px;
-      font-weight: 600; }
+      font-weight: 600;
+      display: table-cell;
+      width: 100% !important; }
       section.engaging-section .engaging-section-content-wrapper .engaging-content h1 {
         text-align: left;
         font-weight: 200;
@@ -1528,7 +1540,10 @@ section.engaging-section {
       color: #FFF;
       font-style: italic;
       font-weight: 300;
-      position: relative; }
+      position: relative;
+      display: table-cell;
+      float: none !important;
+      vertical-align: middle; }
       section.engaging-section .engaging-section-content-wrapper .engaging-description p {
         font-family: "Poly";
         font-size: 30px;
@@ -1871,6 +1886,16 @@ section.engaging-section {
   .entry-content .nf-form-cont input[type=button],
   .single-content .nf-form-cont input[type=button] {
     background: #002664; }
+
+a.custom-btn {
+  padding: 10px 15px;
+  border: 1px solid #002664;
+  color: #002664;
+  text-transform: uppercase;
+  background: #FFF; }
+  a.custom-btn:hover {
+    background: #002664;
+    color: #FFF; }
 
 .mouse {
   cursor: pointer;
@@ -2633,7 +2658,11 @@ address {
     display: none; }
   .service-wrapper-item {
     width: 48%;
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  .about-content,
+  .about-description {
+    display: table-row;
+    padding: 20px !important; } }
 
 @media (max-width: 600px) {
   .service-wrapper-item {
@@ -2643,6 +2672,15 @@ address {
   .about-description {
     height: auto !important;
     margin-bottom: 20px; }
+  .about-content,
+  .about-description,
+  .engaging-content,
+  .engaging-description {
+    display: table-row !important;
+    padding: 20px !important; }
+  .about-description-content,
+  .engaging-description-content {
+    padding: 20px; }
   .specialities-right {
     width: 100% !important; }
   .news-section .section-title a {
