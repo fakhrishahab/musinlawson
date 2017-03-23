@@ -870,6 +870,56 @@ function colelawson_customize_register( $wp_customize ) {
 		    	)
 		    );
 
+
+		/* Email Settings
+		----------------------------------------------------------------------*/
+		$wp_customize->add_section( 'colelawson_email_setting' ,
+			array(
+				'priority'    => 3,
+				'title'       => esc_html__( 'Email Setting', 'colelawson' ),
+				'description' => '',
+				'panel'       => 'colelawson_options',
+			)
+		);
+
+			// Email Indonesia
+		    $wp_customize->add_setting(
+		    	'colelawson_email_indonesia',
+		    	array(
+		    		'sanitize_callback' => 'colelawson_sanitize_text',
+		    		'transport' => 'postMessage',
+		    		'default' => __('', 'colelawson'),
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	'colelawson_email_indonesia',
+		    	array(
+		    		'label' => __('Email Indonesia', 'colelawson'),
+		    		'section' => 'colelawson_email_setting',
+		    		'type' => 'text'
+		    	)
+		    );
+
+		    // Email Australia
+		    $wp_customize->add_setting(
+		    	'colelawson_email_australia',
+		    	array(
+		    		'sanitize_callback' => 'colelawson_sanitize_text',
+		    		'transport' => 'postMessage',
+		    		'default' => __('', 'colelawson'),
+		    	)
+		    );
+
+		    $wp_customize->add_control(
+		    	'colelawson_email_australia',
+		    	array(
+		    		'label' => __('Email Australia', 'colelawson'),
+		    		'section' => 'colelawson_email_setting',
+		    		'type' => 'text'
+		    	)
+		    );
+
 	/**
 	 * Hook to add other customize
 	 */

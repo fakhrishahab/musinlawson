@@ -1,7 +1,15 @@
 <?php
 $hide_location = get_theme_mod('colelawson_hide_location_section');
 $arrLocation = get_theme_mod('colelawson_location_detail');
+
+$email_id = get_theme_mod('colelawson_email_indonesia');
+$email_aus = get_theme_mod('colelawson_email_australia');
 ?>
+
+<script>
+	var email_id = <?php echo $email_id;?>;
+	var email_aus = <?php echo $email_aus;?>;
+</script>
 <section class="contact-section" id="contact-section">
 	<div class="container row">
 		<div class="grid-8">

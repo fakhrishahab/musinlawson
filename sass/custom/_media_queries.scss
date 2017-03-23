@@ -154,12 +154,19 @@
 		bottom: 40px;
 		right: 20px;
 	}
-        .m-hide{
-            display:none;
-        }
+    .m-hide{
+        display:none;
+    }
+    .service-wrapper-item{
+    	width: 48%;
+    	margin-bottom: 0;
+    }
 }
 
 @media (max-width: 600px){
+    .service-wrapper-item{
+    	width: 100%;
+    }
 	.option-language{
 		span{
 			display:inline-block;
