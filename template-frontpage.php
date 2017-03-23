@@ -8,8 +8,16 @@
 get_header();
 ?>
 
-
-<div id="content" class="site-content">
+<!-- <div class="popup-container">
+	<div class="popup-wrapper">
+		<div class="popup-message">
+			<p>Form submitted successfully.</p>
+			<p>Thank you for contacting Musin & Lawson Communications. We appreciate you taking the time to write to us and will endeavour to respond to you within one business day. If your enquiry is urgent, please call our Jakarta office on +62 21 2965 1271</p>
+		</div>
+	</div>
+	<i class="fa fa-close close-popup"></i>
+	</div> -->
+<div id="content" class="site-content pRelative">
 
 	<?php 
 	if ( is_front_page() && !is_paged() && is_dynamic_sidebar('headerwidget') ) {

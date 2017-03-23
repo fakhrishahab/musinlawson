@@ -176,8 +176,10 @@ jQuery(document).ready(function($){
 		console.log(this.value);
 		if(value=='indonesia'){
 			jQuery('.email_dest').val(email_id);
+			jQuery('.email_cc').val(email_aus);
 		}else{
 			jQuery('.email_dest').val(email_aus);
+			jQuery('.email_cc').val(email_id);
 		}
 		
 	});
@@ -270,6 +272,11 @@ function initMap() {
 		map: map1
 	});
 }
+
+jQuery(document).on('click', '.close-popup', function(){
+	console.log('clicked');
+	jQuery(this).parents('.popup-container').remove();
+});
 
 // function setCookie(cname, cvalue, exdays) {
 //     var d = new Date();

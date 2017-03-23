@@ -374,7 +374,7 @@ section.about-section{
 		}
 
 		.about-content{
-			padding: 0 50px 50px 0px;
+			padding: 40px 50px 50px 0px;
 			display: table-cell;
 			width: 100%!important;
 			// font-weight: 600;
@@ -384,6 +384,7 @@ section.about-section{
 				text-align: left;
 				font-weight: 200;
 				word-spacing: -10px;
+				line-height: 30px;
 			}
 
 			a{
@@ -456,6 +457,7 @@ section.about-section{
 // SERVICE SECTION 
 .section-services{
 	background: $c-5;
+	padding-top: 30px
 }
 .section-title{
 	width: 100%;
@@ -921,10 +923,11 @@ section.engaging-section{
 
 		.tabs-trigger{
 			display: inline-block;
-			padding: 15px 40px;
+			padding: 10px 40px;
 			color: #000;
 			font-weight: 600;
 			cursor: pointer;
+			transition: all 0.5s ease;
 
 			&.active{
 				background: $white;
@@ -950,8 +953,8 @@ section.engaging-section{
 		}
 
 		.location-info{
-			padding: 30px;
-			min-height: 220px;
+			padding: 20px;
+			min-height: 160px;
 		}
 
 		.location-map{
@@ -1337,10 +1340,12 @@ a.custom-btn{
 	color: $c-1;
 	text-transform: uppercase;
 	background: #FFF;
+	transition: all 0.5s ease;
 
 	&:hover{
 		background: $c-1;
 		color: $white;
+		transition: all 0.5s ease;
 	}
 }
 
@@ -1367,6 +1372,98 @@ a.custom-btn{
     -webkit-animation: finger 2s infinite;
     animation: finger 2s infinite;
     }
+}
+
+.popup-container{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: table;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background: rgba(0,0,0,.8);
+
+	&.hide{
+		display:none;
+	}
+
+	.popup-wrapper{
+		display: table-cell;
+		vertical-align: middle;
+		margin: 0 auto;
+
+		.popup-message{
+			margin: 0 auto;
+			background: $white;
+			max-width: 40%;
+			padding: 20px;
+			@include border-radius( 10px);
+		}
+	}
+
+	i.fa{
+		color: $white;
+		font-size: 30px;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: $c-1;
+		padding: 10px;
+		cursor: pointer;
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+    line-height:1.5em;
+    margin:.5em 0 .3em 0;
+    // font-weight:700;
+    small{
+        font-size:.8em;
+    }
+}
+h1 { font-size: 4em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+
+.pRelative{
+	position: relative;
+}
+.engaging-section .read-more-link,
+.read-more-link{
+	transition: all 0.5s ease;
+}
+.engaging-section .read-more-link:hover{
+	background: $white;
+	border-color: $white;
+	color: $c-1!important;
+	transition: all 0.5s ease;
+}
+.read-more-link:hover{
+	background: $c-1;
+	border-color: $c-1;
+	color: $white!important;
+	transition: all 0.5s ease;
+}
+
+.content-sidebar-menu a{
+	transition: all 0.5s ease;	
+}
+.content-sidebar-menu a:hover{
+	color:$c-black;
+	transition: all 0.5s ease;	
+}
+
+a:hover{
+	color: $c-2!important;
+}
+
+.tabs-trigger:hover{
+	background: $white;
+	transition: all 0.5s ease;
 }
 
 @-webkit-keyframes intro {
