@@ -8,17 +8,15 @@
  */
 
 get_header(); ?>
-<?php if ( have_posts() ) { ?>
-				
-	<div class="content-header">
-		<div class="container header-gap">
+
+<div class="content-header header-gap">
+		<div class="container ">
 			<h2>Search Results for:</h2>
 			<h1>"<?php echo get_search_query();?>"</h1>
 			
 		</div>
 		
 	</div><!-- .page-header -->
-<?php } ?>
 <div class="container">
 	<div class="row search-page-wrapper">
 		<div class="grid-8">
@@ -36,7 +34,6 @@ get_header(); ?>
 						 * called content-search.php and that will be used instead.
 						 */
 						get_template_part( 'template-parts/content', 'search' );
-
 					endwhile;
 
 					// the_posts_navigation();
@@ -44,7 +41,7 @@ get_header(); ?>
 
 				else :
 
-					get_template_part( 'template-parts/content', 'search' );
+					get_template_part( 'template-parts/content', 'none' );
 
 				endif; 
 

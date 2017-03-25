@@ -2612,34 +2612,32 @@ address {
   -o-background-size: cover;
   background-size: cover;
   position: relative; }
-  .error-404:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 38, 100, 0.6);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2; }
-  .error-404 .container {
-    position: relative;
-    z-index: 3; }
 
-.error-title h1, .error-title h2, .error-title h3 {
-  color: #fff;
-  font-family: "Source Sans Pro", sans-serif; }
-
-.error-title h1 {
-  font-size: 9em;
-  font-weight: 600; }
-
-.error-title h2 {
-  font-size: 6em;
-  font-weight: 400; }
-
-.error-title h3 {
-  font-size: 3em;
-  font-weight: 400; }
+.error-title {
+  margin: 20px 0; }
+  .error-title h1, .error-title h2, .error-title h3 {
+    color: #002664;
+    font-family: "Source Sans Pro", sans-serif; }
+  .error-title h1 {
+    font-size: 9em;
+    font-weight: 600;
+    background: #002664;
+    padding: 20px;
+    display: inline-block;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #fff;
+    margin: 0; }
+  .error-title h2 {
+    font-size: 6em;
+    font-weight: 400;
+    line-height: 1em; }
+  .error-title h3 {
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 1em;
+    color: #666666; }
 
 .v-outer {
   width: 100%;
@@ -2659,6 +2657,21 @@ address {
     width: 100%;
     height: 100%;
     position: absolute; } }
+
+.nothing-found {
+  border: solid 2px #dddddd;
+  padding: 20px; }
+  .nothing-found p {
+    font-size: 1.1em;
+    color: #777777; }
+
+@media all and (max-width: 800px) {
+  .error-title h1 {
+    font-size: 5em; }
+  .error-title h2 {
+    font-size: 3em; }
+  .error-title h3 {
+    font-size: 1.5em; } }
 
 @media (min-width: 1500px) {
   .container {
