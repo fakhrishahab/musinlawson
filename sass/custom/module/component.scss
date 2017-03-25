@@ -407,7 +407,7 @@ section.about-section{
 			height:100%;
 			padding: 0 0 0 40px;
 			font-family: $font__poly;
-			font-size: 30px;	
+			font-size: 27px;	
 			color: $white;
 			font-style: italic;
 			font-weight: 300;
@@ -549,7 +549,7 @@ section.about-section{
 	overflow: hidden;
 
 	.specialities-video-wrapper{
-		height: 450px;
+		height: 350px;
 		position: relative;
 		iframe{
 			width: 100%;
@@ -568,7 +568,7 @@ section.about-section{
 }
 
 .specialities-description-wrapper{
-	height: 450px;
+	height: 350px;
 	background-position: center!important;
 	background-size: contain!important;
 	position: relative;
@@ -593,7 +593,7 @@ section.about-section{
 	iframe{
 		float:left;
 		width: 100%;
-		height: 450px;
+		height: 350px;
 	}
 }
 
@@ -667,11 +667,11 @@ section.about-section{
 	}
 
 	.specialities-slider-image-wrapper{
-		padding: 30px;
+		padding: 20px;
 
 		.slider-image-title{
 			color: $c-6;
-			font-size: 22px;
+			font-size: 20px;
 			font-weight: bold;
 		}
 
@@ -714,13 +714,13 @@ section.about-section{
 
 		.swiper-wrapper{
 			img{
-				max-height: 75px;
+				max-height: 55px;
 			}
 		}
 
 		.swiper-slide{
 			text-align: center;
-			max-height: 75px;
+			max-height: 55px;
 		}
 	}
 }
@@ -782,7 +782,7 @@ section.engaging-section{
 			height:100%;
 			padding: 0 0 0 40px;
 			font-family: $font__poly;
-			font-size: 30px;	
+			font-size: 27px;	
 			color: $white;
 			font-style: italic;
 			font-weight: 300;
@@ -1256,6 +1256,10 @@ section.engaging-section{
 
 		.content-summary{
 			display:table;
+
+			// &>div{
+			// 	display: table-row;
+			// }
 		}
 
 		.content-summary-thumbnail,

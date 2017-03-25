@@ -22,7 +22,6 @@
 	</header><!-- .entry-header -->
 	
 	<div class="content-summary">
-		<div style="display:table-row">
 			<?php if ( has_post_thumbnail() ) { 
 				$link = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail');
 			?>
@@ -38,7 +37,6 @@
 				?>
 
 			</div>
-		</div>
 		
 
 	</div>
