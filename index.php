@@ -12,7 +12,25 @@
  * @package colelawson
  */
 
-get_header(); ?>
+get_header(); 
+// pagination
+if ( get_query_var('paged') )
+    $paged = get_query_var('paged');
+elseif ( get_query_var('page') )
+    $paged = get_query_var('page');
+else
+        $paged = 1;
+ 
+// arguments for the new query
+$args = array(
+        'category_name' => 'news, berita',
+        'paged' => $paged
+        // you could use the id to
+        // 'cat' => 2 or whatever is the id for your category
+        );
+ 
+$wp_query = new WP_Query($args);
+?>
 
 	<div id="primary" class="header-gap">
             <div class="container">
@@ -20,10 +38,10 @@ get_header(); ?>
                     <div class="grid-9 p20">
                         <main id="main" class="site-main" role="main">
 		<div class="post-wrap">
-	                        <?php if ( have_posts() ) : ?>
+	                        <?php if ( $wp_query->have_posts() ) : ?>
 	                            <?php $postCount=0 ?>
-	                            <?php while ( have_posts() ) : the_post(); ?>
-	                                <div class="post" id="post-<?php echo $postCount; ?>" <?php post_class(); ?>>
+	                            <?php while ( $wp_query->have_posts() ) : the_post(); ?>
+	                                <div class="post" id="post-<?php echo $paged; ?>" <?php post_class(); ?>>
 	                                    <div class="post-img">
                     <a href="<?php the_permalink(); ?>">
                     <?php echo the_post_thumbnail('thumbnail-medium');?>
@@ -68,7 +86,7 @@ get_header(); ?>
                     </div>
                 </div>
 	                                </div><!-- .post-->
-	                                <?php $postCount++ ?>
+	                                <?php $paged++ ?>
 	                            <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
 	                            <?php else : ?>
 	                        <?php endif; ?>

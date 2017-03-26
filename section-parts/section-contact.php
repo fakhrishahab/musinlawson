@@ -17,7 +17,7 @@ $email_aus = get_theme_mod('colelawson_email_australia');
 		<div class="grid-8">
 			<div class="contact-location">
 				<div class="section-title">
-					<h1>Contact</h1>
+					<h1><?php echo pll__('Contact');?></h1>
 				</div>
 
 				<div class="location-wrapper">

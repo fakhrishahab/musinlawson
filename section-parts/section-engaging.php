@@ -40,7 +40,7 @@ $engaging = wp_get_recent_posts($args, ARRAY_A);
 					<p><?php echo apply_filters('the_content',$engaging[0]['post_content']); ?>
 
 					<!-- <a href="<?php// the_permalink($engaging_link); ?>" class="read-more-link">Read Our Story</a> -->
-					<a href="#contact-section" class="read-more-link">Contact Us</a> 
+					<a href="#contact-section" class="read-more-link"><?php echo pll__('Contact Us');?></a> 
 				</div>
 
 				<div class="engaging-description grid-5">

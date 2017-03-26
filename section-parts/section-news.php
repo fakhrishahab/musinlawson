@@ -21,9 +21,9 @@ $category_id = get_cat_ID($category_name);
 <section class="news-section" id="news-section">
 	<div class="container">
 		<div class="section-title">
-			<h1>News</h1>
-			<p>Check here for the latest updates from Musin & Lawson Communications.</p>
-			<a class="read-more-link" href="<?php echo get_permalink( get_option('page_for_posts' ) );?>">SEE ALL</a>
+			<h1><?php echo pll__('News')?></h1>
+			<!-- <p>Check here for the latest updates from Musin & Lawson Communications.</p> -->
+			<a class="read-more-link" href="<?php echo get_permalink( get_option('page_for_posts' ) );?>"><?php echo pll__('See All');?></a>			
 		</div>
 
 		<div class="news-wrapper">

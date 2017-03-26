@@ -39,7 +39,7 @@ $about = wp_get_recent_posts($args, ARRAY_A);
 					<h1><?php echo $about[0]['post_title']; ?></h1>
 					<p><?php echo apply_filters('the_content',$about[0]['post_content']); ?>
 					
-					<a href="<?php the_permalink($about_link); ?>" class="read-more-link">Read Our Story</a>
+					<a href="<?php the_permalink($about_link); ?>" class="read-more-link"><?php echo pll__('Read Our Story');?></a>
 				</div>
 
 				<div class="about-description grid-5">

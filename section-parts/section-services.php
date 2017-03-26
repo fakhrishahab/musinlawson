@@ -29,8 +29,8 @@ if(!$hide_service_section){
 	<section class="section-services" id="services-section">
 		<div class="container">
 			<div class="section-title">
-				<h1 detect-language lang="en"><?php echo $title; ?></h1>
-				<p detect-language lang="en"> <?php echo esc_textarea($description); ?> </p>
+				<h1 detect-language lang="en"><?php echo pll__('Our Services'); ?></h1>
+				<p detect-language lang="en"> <?php echo pll__('service_desc'); ?> </p>
 				<!-- <h1 detect-language lang="id"><?php //echo $title_id; ?></h1>
 				<p detect-language lang="id"> <?php //echo esc_textarea($description_id); ?> </p> -->
 			</div>

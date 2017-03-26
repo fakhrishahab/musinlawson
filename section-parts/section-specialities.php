@@ -14,7 +14,7 @@ if(!$hide_specialities_section){
 	<section class="specialities-section" id="specialities-section">
 		<div class="container">
 			<div class="section-title">
-				<h1><?php echo $title;?></h1>
+				<h1><?php echo pll__('Industry Specialities');?></h1>
 			</div>
 
 			<!-- <div class="row specialities-content-wrapper">
@@ -78,17 +78,20 @@ if(!$hide_specialities_section){
 					<div class="specialities-video-wrapper">
 						<iframe src='<?php echo $video; ?>?showinfo=0' frameborder="0" allowfullscreen></iframe>
 						<div class="specialities-video-desc">
-							<?php echo esc_html($video_title); ?>
+							<?php //echo esc_html($video_title); ?>
+							<?php echo pll__('specialities video title');?>
 						</div>
 					</div>
 				</div>
 				<div class="grid-5 specialities-right">
 					<div class="specialities-title">
-						<?php echo htmlspecialchars_decode($description); ?>
+						<?php //echo htmlspecialchars_decode($description); ?>
+						<?php echo htmlspecialchars_decode(pll__('specialities_video_desc'))?>
 					</div>
 					<div class="specialities-slider-image-wrapper">
 						<div class="slider-image-title">
-							<?php echo esc_html($slider_title); ?>
+							<?php //echo esc_html($slider_title); ?>
+							<?php echo pll__('specialities_video_slide');?>
 						</div>
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
