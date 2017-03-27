@@ -79,7 +79,7 @@ function homepage_scripts(){
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script('jcookie', get_template_directory_uri() . '/js/jquery.cookie.js', null, $version, true);
 	wp_enqueue_script('scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array('jquery'), $version, true);
-	wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.jquery.js', array('jquery'), $version, true);
+	wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper.min.js', array('jquery'), $version, true);
 	wp_enqueue_script('nav', get_template_directory_uri() .'/js/custom_navigation.js', array('jquery'), $version, true);
 }
 
