@@ -6,8 +6,7 @@ Author: Fakhri Shahab
 Author URI: http://fakhrisyahab.com
 License: GPLv2
 */
-?>
-<?php
+
 add_action( 'widgets_init', 'register_colelawson_service_widget' );
 
 function register_colelawson_service_widget() {
@@ -40,7 +39,6 @@ function tutsplus_check_for_page_tree() {
     }
  
 }
-
 class Colelawson_Service_Widget extends WP_Widget{
 	function __construct(){
 		parent::__construct(

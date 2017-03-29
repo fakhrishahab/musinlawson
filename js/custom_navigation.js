@@ -123,7 +123,7 @@ jQuery(document).ready(function($){
 			$(this).siblings().removeClass('active');
 			$('.tabs-content#'+id).addClass('show');
 			$('.tabs-content#'+id).siblings().removeClass('show');
-			initMap(id);
+			initMap();
 			// setFooterEnquiryHeight();
 		}
 	});
@@ -242,46 +242,35 @@ function arrangeAboutSection(){
 	}
 }
 
-function initMap(id) {
-	if(id){
-		if(id=='tab0'){
-			var mapLat = jQuery('#location-map0').data('lat');
-			var mapLng = jQuery('#location-map0').data('lng');	
-			var element = 'location-map0';								
-		}else{
-			mapLat = jQuery('#location-map1').data('lat');
-			mapLng = jQuery('#location-map1').data('lng');
-			element = 'location-map1';
-		}
-	}else{
-		mapLat = jQuery('#location-map0').data('lat');
-		mapLng = jQuery('#location-map0').data('lng');	
-		element = 'location-map0';	
-	}
-		
+function initMap() {
 // Create a map object and specify the DOM element for display.
-	
-	var map = new google.maps.Map(document.getElementById(element), {
-		center: {lat: parseFloat(mapLat), lng: parseFloat(mapLng)},
+	var map0Lat = jQuery('#location-map0').data('lat');
+	var map0Lng = jQuery('#location-map0').data('lng');
+
+	var map1Lat = jQuery('#location-map1').data('lat');
+	var map1Lng = jQuery('#location-map1').data('lng');
+
+	var map = new google.maps.Map(document.getElementById('location-map0'), {
+		center: {lat: map0Lat, lng: map0Lng},
 		scrollwheel: false,
 		zoom: 16
 	});
 
 	var marker = new google.maps.Marker({
-		position: {lat: parseFloat(mapLat), lng: parseFloat(mapLng)},
+		position: {lat: map0Lat, lng: map0Lng},
 		map: map
 	});
 
-	// var map1 = new google.maps.Map(document.getElementById('location-map1'), {
-	// 	center: {lat: map1Lat, lng: map1Lng},
-	// 	scrollwheel: false,
-	// 	zoom: 16
-	// });
+	var map1 = new google.maps.Map(document.getElementById('location-map1'), {
+		center: {lat: map1Lat, lng: map1Lng},
+		scrollwheel: false,
+		zoom: 16
+	});
 
-	// var marker1 = new google.maps.Marker({
-	// 	position: {lat: map1Lat, lng: map1Lng},
-	// 	map: map1
-	// });
+	var marker1 = new google.maps.Marker({
+		position: {lat: map1Lat, lng: map1Lng},
+		map: map1
+	});
 }
 
 jQuery(document).on('click', '.close-popup', function(){
