@@ -151,7 +151,7 @@ function hrw_enqueues(){
 }
 add_action('admin_enqueue_scripts', 'hrw_enqueues');
 
-if(function_exists('pll_register_string')){
+// if(function_exists('pll_register_string')){
 	pll_register_string('service_title', 'Our Services', false);
 	pll_register_string('service_desc', 'service_desc', true);
 	pll_register_string('specialities_title', 'Industry Specialities', false);
@@ -164,7 +164,7 @@ if(function_exists('pll_register_string')){
 	pll_register_string('specialities_video_title', 'specialities video title', true);
 	pll_register_string('specialities_video_desc', 'specialities_video_desc', true);
 	pll_register_string('specialities_video_slide', 'specialities_video_slide', true);
-}
+// }
 
 
 
