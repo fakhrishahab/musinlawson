@@ -762,6 +762,13 @@ section.engaging-section{
 				font-weight: 400;
 			}
 
+			a:not(.read-mode-link){
+				&:active,
+				&:visited{
+					color: $white;
+				}
+			}
+
 			a.read-more-link{
 				&:before,&:after{
 					content: none;
@@ -992,8 +999,9 @@ section.engaging-section{
 
 .footer-enquiry{
 	background: $c-1;
-	height: 100%;
+	height: 657px;
 	padding: 40px;
+
 
 	.footer_enquiry_widget{
 		width: 100%;
