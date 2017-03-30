@@ -164,7 +164,7 @@ if(function_exists('pll_register_string')){
 	pll_register_string('specialities_video_title', 'specialities video title', true);
 	pll_register_string('specialities_video_desc', 'specialities_video_desc', true);
 	pll_register_string('specialities_video_slide', 'specialities_video_slide', true);
- }
+}
 
 
 
