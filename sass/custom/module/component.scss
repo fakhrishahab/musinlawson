@@ -5,8 +5,24 @@
 	background: $c-1;
 	height:$hh;
 	top:0;
+	transition: all ease 0.4s;
 	// @include box-shadow(0px 2px 100px #000);
         @include box-shadow(0 2px 4px rgba(black, .2));       
+}
+
+.site-header.active{
+	height: 110px;
+	transition: all ease 0.4s;
+
+	.custom-logo{
+		max-height: 90px;
+		transition: all ease 0.4s;
+	}
+
+	.header-right-wrapper{
+		padding-top: 0;
+		transition: all ease 0.4s;
+	}
 }
 
 .container{
@@ -25,6 +41,7 @@
 	float: right;
 	width: 70%;
 	padding-top: 20px;
+	transition: all ease 0.4s;
 }
 
 .site-branding{
@@ -34,7 +51,8 @@
 		// width: 100%;
 		max-height:120px;
 		width: auto;
-                margin:10px 0;
+        margin:10px 0;
+		transition: all ease 0.4s;
 	}
 }
 
@@ -151,6 +169,7 @@ ul>li>.sub-menu{
 	float: right;
 	margin-top: 15px;
 	margin-right: 15px;
+	transition: all ease 0.4s;
 
 	ul{
 		padding: 5px;
@@ -467,6 +486,8 @@ section.about-section{
 
 	h1{
 		color: $c-black;
+		line-height: .1em;
+		margin-bottom: 	30px;
 	}
 
 	p{
@@ -485,6 +506,7 @@ section.about-section{
     justify-content: space-between;
     position:relative;
     padding-bottom: 40px;
+    vertical-align: middle;
 	
 	&-item{
     	position:relative;
@@ -501,8 +523,9 @@ section.about-section{
 
 		figure{
 			width : 100%;
-			height: 200px;
+			height: 150px;
 			overflow: hidden;
+			vertical-align: middle;
 
 			.img-overlay{
 				position: relative;
@@ -529,10 +552,10 @@ section.about-section{
 			color: $white;
 			font-size: 22px;
 			font-weight: bold;
-			top: 40%;
-			// bottom: 40%;
-			left: 12%;
-			right: 12%;
+			top: 30%;
+			bottom: 30%;
+			left: 15%;
+			right: 15%;
 		}
 	}
 
@@ -540,13 +563,22 @@ section.about-section{
 // SPECIALITIES SECTION
 .specialities-section{
 	background: $white;
+	padding-top: 30px;
 	padding-bottom: 40px;
+
+	.section-title{
+
+		h1{
+			margin-bottom: 	50px;
+		}		
+	}
 }
 
 .specialities-content-wrapper{
 	padding:0;
 	@include box-shadow(4px 4px 10px $c-8);
 	overflow: hidden;
+	margin-top: 20px;
 
 	.specialities-video-wrapper{
 		height: 350px;
@@ -651,6 +683,18 @@ section.about-section{
 		padding: 20px;
 		position: relative;
 
+		ul{
+			color: $white;
+			list-style-type: disc;
+			// overflow: hidden;
+			li{
+				width: 50%;
+				float: left;
+				// display: inline-block;
+				color: $white;
+			}
+		}
+
 		&:before{
 			width: 0; 
 			height: 0; 
@@ -672,7 +716,7 @@ section.about-section{
 		.slider-image-title{
 			color: $c-6;
 			font-size: 20px;
-			font-weight: bold;
+			font-weight: bold;			
 		}
 
 		.swiper-container{
@@ -828,11 +872,14 @@ section.engaging-section{
 // NEWS SECTION
 .news-section{
 	.section-title{
+		h1{
+			margin: 60px 0;
+		}
 
 		a{
 			position: absolute;
 			right: 0;
-			bottom: 10px;
+			bottom: -10px;
 			font-size: 13px;
 			font-weight: 400;
 			color: $c-4;
@@ -916,6 +963,12 @@ section.engaging-section{
 // CONTACT SECTION
 .contact-section{
 	background: $c-5;
+}
+
+.contact-location{
+	.section-title{
+		margin: 50px 0;
+	}
 }
 
 .location-wrapper{
