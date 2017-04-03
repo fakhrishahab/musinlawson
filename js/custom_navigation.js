@@ -12,22 +12,13 @@ function(){
     console.log('google-loader has been loaded, but not the maps-API');
 });
 
-
-// var lang = ['id', 'en'];
-// function checkCookie(name) {
-//     var bahasa = getCookie(name);
-//     if (bahasa != "") {
-//     	console.log('do nothing for cookies');
-//         // alert("Welcome again " + username);
-//     } else {
-//     	console.log('create cookies');
-// 		setCookie('bahasa', lang[1]);
-//     }
-// }
-// checkCookie('bahasa');
-// setCookie('bahasa', lang[1]);
+jQuery(window).on('scroll', function(){
+	// console.log(jQuery(this).scrollTop())
+})
 
 jQuery(document).ready(function($){
+	var hash;
+
 	$('.colelawson-menu > .menu-item-has-children').each(function(key){
 		$(this).append($('<i>', {
 			class : 'fa fa-angle-down'
@@ -88,30 +79,6 @@ jQuery(document).ready(function($){
 		$(this).siblings('ul').toggle();
 	});
 
-	// $('a','.lang-item').on('click', function(e){
-	// 	var attr = $(this).attr('lang');
-	// 	var lang = attr.split('-')[0];
-	// 	var self = $(this);
-	// 	alert(lang);
-	// 	// $.removeCookie('lang');
-	// 	$.cookie('lang', lang);
-	// 	// console.log($.cookie('lang'));
-	// 	setTimeout(function(){
-	// 		window.location.href=self.attr('href');
-	// 	}, 2000);
-	// 	// console.log($.cookie('lang'));
-	// 	e.preventDefault();
-	// 	e.stopPropagation();
-	// 	// window.location.href=$(this).attr('href');
-	// 	// alert(lang);
-	// 	// // document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
-	// 	// setCookie('bahasa', lang);
-	// 	// $.removeCookie('test');
-	// 	// $.cookie('test', lang );
-	// 	// document.cookie="bahasa=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=;";
-	// 	// document.cookie="bahasa="+lang+";path=/;";
-	// });
-
 	$('body').on('click', function(){
 		$('ul', '.languagewidget').hide();
 	});
@@ -128,49 +95,7 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	// if($.cookie('pll_language')){
-	// 	$('*[data-lang=="'+$.cookie('pll_language')+'""]').show();
-	// 	$('*[data-lang=="id"]').hide();
-	// }else{
-	// 	$('*[data-lang=="en"]').hide();
-	// 	$('*[data-lang=="id"]').show();
-	// }
-	// $('*[data-lang==en]').hide();
-	$('*[data-lang]').each(function(key, value){
-		// if($(this)[key])
-		// if($.cookie('pll_language')){
-		// 	$(this).attr('data-lang')
-		// }
-		// console.log(value)
-	})
 
-	// $('*[detect-language]').each(function(){
-	// 	var self = $(this);
-	// 	$(this).attr('data-lang', function(index, value){
-	// 		if($.cookie('pll_language') && $(self[index]).attr('data-lang') == $.cookie('pll_language')){
-	// 			$(self[index]).show();
-	// 		}else{
-	// 			console.log$(self[index]).attr('data-lang')
-	// 			// conso
-	// 			// $(self[index]).hide();
-				
-	// 			// console.log(value)
-	// 		}
-			
-	// 		// console.log(self[index])
-	// 	})
-	// 	// if($.cookie('pll_language')){
-	// 	// 	$(this).
-	// 	// }
-	// 	// console.log($(this).attr('data-lang', 'en').html());
-	// // 	// console.log('cookies',$.cookie('lang'))
-	// // 	if($(this).data('lang') != $.cookie('pll_language')){
-	// // 		$(this).hide();
-	// // 	}
-
-	// // 	console.log($(this).data('lang', 'id'))
-	// // 	// console.log($(this).html());
-	// });
 	jQuery(document).on('change', 'select.ninja-forms-field', function(){
 		var value = jQuery(this).html();
 		console.log(this.value);
@@ -190,6 +115,17 @@ jQuery(document).ready(function($){
 		var header = jQuery('.site-header').outerHeight();
 		body.animate({scrollTop: about-header}, '500');
 	});
+
+	jQuery(window).scroll(function(){
+		var pos = jQuery(this).scrollTop();
+		if(pos >= 600){
+			jQuery('.site-header').addClass('active');
+		}else{
+			jQuery('.site-header').removeClass('active');
+		}
+	});
+
+	
 	
 
 	// setDescriptionHeight();
@@ -198,6 +134,25 @@ jQuery(document).ready(function($){
 	// setFooterEnquiryHeight();
 	setLocationTabDefault();
 });
+
+jQuery(window).load(function(){
+	if(window.location.hash != '' && window.location.hash){
+		hash = window.location.hash;
+		// console.log(hash, jQuery(hash).offset().top, jQuery('#masthead').outerHeight() )
+		if(window.location.hostname != 'localhost'){
+			var valScroll = jQuery(hash).offset().top - jQuery('#masthead').outerHeight();
+			// console.log('local', valScroll)
+		}else{
+			valScroll = jQuery(hash).offset().top - jQuery('#masthead').outerHeight();
+			// console.log('online', valScroll)
+			
+		}
+		jQuery('body').animate({
+        	scrollTop: valScroll
+        }, 1000);
+        return false;
+	}
+})
 
 jQuery(window).resize(function(){
 	// setDescriptionHeight();
@@ -274,33 +229,8 @@ function initMap() {
 }
 
 jQuery(document).on('click', '.close-popup', function(){
-	console.log('clicked');
 	jQuery(this).parents('.popup-container').remove();
 });
-
-// function setCookie(cname, cvalue, exdays) {
-//     var d = new Date();
-//     d.setTime(d.getTime() + (exdays*24*60*60*1000));
-//     var expires = "expires="+ d.toUTCString();
-//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-// }
-
-// function getCookie(cname) {
-//     var name = cname + "=";
-//     var decodedCookie = decodeURIComponent(document.cookie);
-//     var ca = decodedCookie.split(';');
-//     for(var i = 0; i <ca.length; i++) {
-//         var c = ca[i];
-//         while (c.charAt(0) == ' ') {
-//             c = c.substring(1);
-//         }
-//         if (c.indexOf(name) == 0) {
-//             return c.substring(name.length, c.length);
-//         }
-//     }
-//     return "";
-// }
-
 
 
 // GOOGLE API KEY : AIzaSyAvBAUVtePqDIN8rHIsEe-cYfdfKpf1KTw

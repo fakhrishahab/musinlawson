@@ -57,10 +57,35 @@
 }
 
 @media (max-width:930px){
+	.jumbotron-header{
+		margin-top: 65px;
+	}
+	.site-header.active{
+		height: 80px;
+		transition: all ease 0.4s;
+
+		.custom-logo{
+			max-height:60px;
+			transition: all ease 0.4s;
+		}
+
+		.header-right-wrapper{
+			padding-top: 0;
+			transition: all ease 0.4s;
+		}
+
+		.languagewidget{
+			margin-top: 35px;
+			transition: all ease 0.4s;
+		}
+	}
 	.option-language{
 		span{
 			display:inline-block;
 		}
+	}
+	.specialities-section .section-title h1{
+		line-height: 50px;
 	}
 	.collapse-menu{
 		max-height: 70vh;
@@ -104,7 +129,7 @@
 	}
 	.languagewidget{
 		margin-right: 50px;
-		margin-top: 10px;
+		margin-top: 15px;
 
 		span{
 			font-size: 14px!important;
@@ -178,6 +203,24 @@
 }
 
 @media (max-width: 600px){
+	.site-header.active{
+		height: 90px;
+		transition: all ease 0.4s;
+
+		.custom-logo{
+			max-height:70px;
+			transition: all ease 0.4s;
+		}
+
+		.header-right-wrapper{
+			padding-top: 0;
+			transition: all ease 0.4s;
+		}
+
+		.languagewidget{
+
+		}
+	}
     .service-wrapper-item{
     	width: 100%;
     }
