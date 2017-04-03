@@ -52,7 +52,13 @@ if(!$hide_service_section){
 							<div class="img-overlay" style="background-image:url(<?php echo $link[0];?>)">
 							</div>
 						</figure>
-						<div class="service-item-title"><?php echo $post['post_title']; ?></div>	
+                                            <div class="service-item-title">
+                                                <div class="v-outer">
+                                                    <div class="v-middle">
+                                                        <div class="v-inner"><h4><?php echo $post['post_title']; ?></h4></div>
+                                                    </div>
+                                                </div>
+                                            </div>
 					</a>
 				</div>
 

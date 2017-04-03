@@ -1325,7 +1325,8 @@ section.about-section .about-section-content-wrapper {
     line-height: .1em;
     margin-bottom: 30px; }
   .section-title p {
-    font-weight: 400; }
+    font-weight: 400;
+    margin-bottom: 0; }
 
 .service-wrapper {
   display: flex;
@@ -1361,16 +1362,25 @@ section.about-section .about-section-content-wrapper {
           width: 100%;
           height: 100%;
           position: absolute;
-          background: rgba(0, 38, 100, 0.6); }
+          background: rgba(0, 38, 100, 0.6);
+          -webkit-transition: cubic-bezier(0.89, 0.28, 0.67, 0.87), 0.2s;
+          -moz-transition: cubic-bezier(0.89, 0.28, 0.67, 0.87), 0.2s;
+          -o-transition: cubic-bezier(0.89, 0.28, 0.67, 0.87), 0.2s;
+          transition: cubic-bezier(0.89, 0.28, 0.67, 0.87), 0.2s; }
     .service-wrapper-item .service-item-title {
       position: absolute;
-      color: #FFF;
-      font-size: 22px;
-      font-weight: bold;
-      top: 30%;
-      bottom: 30%;
-      left: 15%;
-      right: 15%; }
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px; }
+      .service-wrapper-item .service-item-title h4 {
+        color: #fff;
+        font-size: 22px;
+        line-height: 1.2em;
+        font-weight: bold; }
+    .service-wrapper-item:hover figure .img-overlay:before {
+      background: rgba(0, 38, 100, 0.8); }
 
 .specialities-section {
   background: #FFF;
