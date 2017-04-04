@@ -888,6 +888,7 @@ section.engaging-section{
 // NEWS SECTION
 .news-section{
 	.section-title{
+		float: left;
 		h1{
 			margin: 60px 0;
 		}
@@ -895,7 +896,7 @@ section.engaging-section{
 		a{
 			position: absolute;
 			right: 0;
-			bottom: -10px;
+			bottom: 45px;
 			font-size: 13px;
 			font-weight: 400;
 			color: $c-4;

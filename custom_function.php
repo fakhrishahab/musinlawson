@@ -165,4 +165,12 @@ function custom_search_form() {
 }
 add_action('custom_search_form', 'custom_search_form');
 
+
+
+function exclude_category( $query ) {
+if ( $query->is_home() && $query->is_main_query() ) {
+$query->set( 'cat', '34, 10' );
+}
+}
+add_action( 'pre_get_posts', 'exclude_category' );
 ?>
