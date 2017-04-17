@@ -12,9 +12,9 @@ function(){
     console.log('google-loader has been loaded, but not the maps-API');
 });
 
-jQuery(window).on('scroll', function(){
-	// console.log(jQuery(this).scrollTop())
-})
+// jQuery(window).on('scroll', function(){
+// 	// console.log(jQuery(this).scrollTop())
+// })
 
 jQuery(document).ready(function($){
 	var hash;
@@ -113,7 +113,7 @@ jQuery(document).ready(function($){
 		var body = jQuery('html, body');
 		var about = jQuery('#about-section').offset().top;
 		var header = jQuery('.site-header').outerHeight();
-		body.animate({scrollTop: about-header}, '500');
+		body.animate({scrollTop: about}, '500');
 	});
 
 	jQuery(window).scroll(function(){
@@ -135,7 +135,7 @@ jQuery(document).ready(function($){
 	setLocationTabDefault();
 });
 
-jQuery(window).load(function(){
+// jQuery(window).load(function(){
 	// if(window.location.hash != '' && window.location.hash){
 	// 	hash = window.location.hash;
 	// 	// console.log(hash, jQuery(hash).offset().top, jQuery('#masthead').outerHeight() )
@@ -152,7 +152,7 @@ jQuery(window).load(function(){
  //        }, 1000);
  //        return false;
 	// }
-})
+// })
 
 jQuery(window).resize(function(){
 	// setDescriptionHeight();
