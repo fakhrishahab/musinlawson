@@ -17,7 +17,7 @@ get_header();
 	</div>
 	<i class="fa fa-close close-popup"></i>
 	</div> -->
-<div id="content" class="site-content pRelative">
+<div id="content" class="site-content pRelative slider-section">
 
 	<?php 
 	if ( is_front_page() && !is_paged() && is_dynamic_sidebar('headerwidget') ) {

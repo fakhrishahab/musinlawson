@@ -136,22 +136,22 @@ jQuery(document).ready(function($){
 });
 
 jQuery(window).load(function(){
-	if(window.location.hash != '' && window.location.hash){
-		hash = window.location.hash;
-		// console.log(hash, jQuery(hash).offset().top, jQuery('#masthead').outerHeight() )
-		if(window.location.hostname != 'localhost'){
-			var valScroll = jQuery(hash).offset().top - jQuery('#masthead').outerHeight();
-			// console.log('local', valScroll)
-		}else{
-			valScroll = jQuery(hash).offset().top - jQuery('#masthead').outerHeight();
-			// console.log('online', valScroll)
+	// if(window.location.hash != '' && window.location.hash){
+	// 	hash = window.location.hash;
+	// 	// console.log(hash, jQuery(hash).offset().top, jQuery('#masthead').outerHeight() )
+	// 	if(window.location.hostname != 'localhost'){
+	// 		var valScroll = jQuery(hash).offset().top - jQuery('#masthead').outerHeight();
+	// 		// console.log('local', valScroll)
+	// 	}else{
+	// 		valScroll = jQuery(hash).offset().top - jQuery('#masthead').outerHeight();
+	// 		// console.log('online', valScroll)
 			
-		}
-		jQuery('body').animate({
-        	scrollTop: valScroll
-        }, 1000);
-        return false;
-	}
+	// 	}
+	// 	jQuery('body').animate({
+ //        	scrollTop: valScroll
+ //        }, 1000);
+ //        return false;
+	// }
 })
 
 jQuery(window).resize(function(){

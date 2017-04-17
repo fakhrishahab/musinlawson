@@ -371,9 +371,16 @@ h3{
 	font-size: 25px;
 	font-family: $font__main;
 }
+.slider-section{
+	z-index: 6;
+}
 
 section.about-section{
-	// background: $c-5;
+	margin-top: -110px;
+	padding-top:110px;
+	position: relative;
+	z-index: 5;
+	background: $white;
 	// padding-bottom: 50px;
 
 	.about-section-content-wrapper{
@@ -476,7 +483,11 @@ section.about-section{
 // SERVICE SECTION 
 .section-services{
 	background: $c-5;
-	padding-top: 30px
+	// padding-top: 30px;
+	margin-top: -110px;
+	padding-top:140px;
+	position: relative;
+	z-index: 4;
 }
 .section-title{
 	width: 100%;
@@ -579,8 +590,11 @@ section.about-section{
 // SPECIALITIES SECTION
 .specialities-section{
 	background: $white;
-	padding-top: 30px;
+	padding-top: 140px;
 	padding-bottom: 40px;
+	margin-top: -110px;
+	z-index: 3;
+	position: relative;	
 
 	.section-title{
 
@@ -788,7 +802,11 @@ section.about-section{
 }
 
 section.engaging-section{
-			background: $c-1;
+	background: $c-1;
+	margin-top: -110px;
+	padding-top: 110px;
+	z-index: 2;
+	position: relative;	
 
 	.engaging-section-content-wrapper{
 		z-index: 4;
@@ -889,6 +907,11 @@ section.engaging-section{
 
 // NEWS SECTION
 .news-section{
+	margin-top: -110px;
+	padding-top: 110px;
+	z-index: 1;
+	position: relative;	
+	background: $white;
 	.section-title{
 		float: left;
 		h1{
@@ -982,6 +1005,10 @@ section.engaging-section{
 // CONTACT SECTION
 .contact-section{
 	background: $c-5;
+	margin-top: -110px;
+	padding-top: 110px;
+	z-index: 0;
+	position: relative;	
 }
 
 .contact-location{
