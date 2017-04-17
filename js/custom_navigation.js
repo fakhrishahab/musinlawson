@@ -130,7 +130,7 @@ jQuery(document).ready(function($){
 
 	// setDescriptionHeight();
 	arrangeAboutSection();
-	setSpecialitiesRightSectionHeight();
+	// setSpecialitiesRightSectionHeight();
 	// setFooterEnquiryHeight();
 	setLocationTabDefault();
 });
@@ -166,7 +166,7 @@ function setLocationTabDefault(){
 	jQuery('.tabs-content').hide();
 	jQuery('.tabs-trigger[data-target='+defaultTab+']').addClass('active', 500);
 	jQuery('.tabs-content#'+defaultTab).addClass('show', 500);
-	setFooterEnquiryHeight();
+	//setFooterEnquiryHeight();
 }
 
 function setFooterEnquiryHeight(){

@@ -1475,7 +1475,8 @@ section.about-section .about-section-content-wrapper {
     width: 100%;
     color: #FFF;
     padding: 20px;
-    position: relative; }
+    position: relative;
+    height: 175px; }
     .specialities-right .specialities-title ul {
       color: #FFF;
       list-style-type: disc; }
@@ -1494,7 +1495,8 @@ section.about-section .about-section-content-wrapper {
       right: 50%;
       bottom: -20px; }
   .specialities-right .specialities-slider-image-wrapper {
-    padding: 20px; }
+    padding: 20px;
+    height: 175px; }
     .specialities-right .specialities-slider-image-wrapper .slider-image-title {
       color: #666666;
       font-size: 20px;
