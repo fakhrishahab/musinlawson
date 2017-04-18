@@ -53,7 +53,7 @@ jQuery(document).ready(function($){
 	var specialitiesSwiper = new Swiper('.swiper-container', {
 		direction: 'horizontal',
 		loop: true,
-		autoHeight: true,
+		// autoHeight: true,
 		slidesPerView: 2,
 		grabCursor: true,
 	    nextButton: '.btn-next',
