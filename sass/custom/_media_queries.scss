@@ -101,6 +101,7 @@
 		.custom-logo{
 			height: 80px;
 			width: auto;
+			margin-top: 5px;
 		}
 	}
 	.service-wrapper-item{
@@ -204,7 +205,7 @@
 
 @media (max-width: 600px){
 	.site-header.active{
-		height: 90px;
+		height: 80px;
 		transition: all ease 0.4s;
 
 		.custom-logo{
@@ -326,5 +327,26 @@
 	}
 	.service-wrapper-item{
 		width: 98%;
+	}
+}
+
+@media (max-width:330px){
+	.site-header{
+		height: 80px;
+	}
+	.site-branding{
+		.custom-logo{
+			height: 70px;
+			width: auto;
+			margin-top: 5px;
+		}
+	}
+	
+	.languagewidget{
+		margin-right: 30px;
+		margin-top: 13px;
+	}
+	.menu-toggle{
+		margin-right: 20px;
 	}
 }

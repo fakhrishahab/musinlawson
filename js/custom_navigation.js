@@ -50,6 +50,10 @@ jQuery(document).ready(function($){
 		$('.collapse-menu').slideToggle(200);
 	});
 
+	$('.collapse-menu a').on('click', function(){
+		$('.collapse-menu').fadeOut(200);
+	});
+
 	var specialitiesSwiper = new Swiper('.swiper-container', {
 		direction: 'horizontal',
 		loop: true,
