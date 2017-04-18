@@ -5,7 +5,7 @@
 
 get_header();
 
-$link = wp_get_attachment_image_src(get_post_thumbnail_id(the_ID()), 'thumbnail-medium');
+$link = wp_get_attachment_image_src(get_post_thumbnail_id(the_ID()), 'thumbnail-large');
 $args = array(
 			'numberposts' => 3,
 			'offset' => 0,

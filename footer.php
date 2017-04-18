@@ -32,6 +32,13 @@ $footer_content = get_theme_mod('colelawson_footer_copyright');
 					<i class="fa fa-angle-up"></i>
 				</div>
 			</a>
+
+			<nav id="footer-nav" class="footer-nav" role="navigation">
+                <ul class="footer-menu">
+                    <?php wp_nav_menu(array('theme_location' => 'menu-footer', 'menu_id' => 'menu-footer', 'container' => '', 'items_wrap' => '%3$s')); ?>
+                </ul>
+            </nav>
+					
 			
 		</div>
 		

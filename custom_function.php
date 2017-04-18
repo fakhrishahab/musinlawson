@@ -74,23 +74,23 @@ add_action('wp_enqueue_scripts', 'homepage_scripts', null, $version, true);
 
 
 // queue up the necessary js
-// function hrw_enqueue($hook){
-// 	wp_enqueue_style('thickbox');
-// 	wp_enqueue_script('media-upload');
-// 	wp_enqueue_script('thickbox');
-// 	wp_enqueue_script( 'jquery' );
-// 	wp_enqueue_script( 'onepress-js-plugins', get_template_directory_uri() . '/js/plugins.js', array(), $version, true );
-// 	// wp_enqueue_script( 'onepress-js-theme', get_template_directory_uri() . '/js/theme.js', array(), $version, true );
-//     wp_enqueue_script( 'jquery-ui-sortable' );
-//     wp_enqueue_script( 'wp-color-picker' );
-//     wp_enqueue_style( 'wp-color-picker' );
-//     wp_enqueue_style( 'onepress-customizer',  get_template_directory_uri() . '/css/customizer.css' );
-// 	wp_enqueue_media();
-// 	wp_enqueue_script('wptuts-upload');
-// 	// moved the js to an external file, you may want to change the path
-// 	wp_enqueue_script('hrw', get_template_directory_uri() . '/js/script.js', null, $version, true);
-// 	wp_enqueue_script('hrws', get_template_directory_uri() . '/js/customizer.js', null, $version, true);
-// }
+function hrw_enqueue($hook){
+	wp_enqueue_style('thickbox');
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'onepress-js-plugins', get_template_directory_uri() . '/js/plugins.js', array(), $version, true );
+	// wp_enqueue_script( 'onepress-js-theme', get_template_directory_uri() . '/js/theme.js', array(), $version, true );
+    wp_enqueue_script( 'jquery-ui-sortable' );
+    wp_enqueue_script( 'wp-color-picker' );
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_style( 'onepress-customizer',  get_template_directory_uri() . '/css/customizer.css' );
+	wp_enqueue_media();
+	wp_enqueue_script('wptuts-upload');
+	// moved the js to an external file, you may want to change the path
+	wp_enqueue_script('hrw', get_template_directory_uri() . '/js/script.js', null, $version, true);
+	wp_enqueue_script('hrws', get_template_directory_uri() . '/js/customizer.js', null, $version, true);
+}
 
 function cus_enqueue($hook){
 

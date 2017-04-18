@@ -60,7 +60,8 @@ function colelawson_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'colelawson' )
+		'menu-1' => esc_html__( 'Primary', 'colelawson' ),
+		'menu-footer' => esc_html__('Footer Menu', 'colelawson')
 	) );
 
 	/*

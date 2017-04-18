@@ -1793,6 +1793,25 @@ section.engaging-section {
     color: #FFF;
     float: left;
     padding-top: 10px; }
+  .site-footer .footer-nav {
+    float: right; }
+    .site-footer .footer-nav .footer-menu {
+      list-style-type: none;
+      padding: 10px 0 0 0;
+      margin: 0 20px 0 0; }
+      .site-footer .footer-nav .footer-menu li {
+        display: inline-block;
+        margin-right: 10px; }
+        .site-footer .footer-nav .footer-menu li:after {
+          content: '|';
+          position: relative;
+          margin-left: 10px;
+          top: -2px;
+          color: #FFF; }
+        .site-footer .footer-nav .footer-menu li:last-child:after {
+          content: none; }
+        .site-footer .footer-nav .footer-menu li a {
+          color: #FFF; }
   .site-footer .btn-to-top {
     cursor: pointer;
     float: right;
